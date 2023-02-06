@@ -174,7 +174,7 @@ Add the maven bin folder to the `Path` (in the same way as you did for the JDK)
 ## Get started with the Switchfully java track
 > **_NOTE:_**\
 > Git Cheat Sheet https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
-1. Fork the java track: https://github.com/switchfully/java-feb-2023
+1. Fork the java track: https://github.com/switchfully/java-2023-feb
 2. Clone your fork into C:\_development\switchfully
 3. Open your project with IntellIj: File -> Open -> Select the "track-java"-folder
 4. Configure your sdk
