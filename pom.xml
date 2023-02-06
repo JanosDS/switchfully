@@ -18,6 +18,7 @@
 
     <modules>
         <module>10-programming-fundamentals-java</module>
+        <module>91-reflection-tests</module>
     </modules>
 
     <properties>
