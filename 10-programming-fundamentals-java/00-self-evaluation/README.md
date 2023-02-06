@@ -107,7 +107,7 @@ Sometimes, tests have been written to validate your solution. Use (run) them.
 ### Codelab 01
 1. [:heavy_check_mark:] Create a method that prints the string "Hello World!"
 2. [:heavy_check_mark:] Create a method (`printAny`) that prints any string you give it.
-3. [:x:] Using method overloading, create two methods with the same name (`printNumber`).
+3. [:heavy_check_mark:] Using method overloading, create two methods with the same name (`printNumber`).
     - Both have one parameter.
     - Both should print a message, although the message differs based on the type (int or double):  
         - `I'm an int: {parameter}` in case of the actual argument being of type `int`.
