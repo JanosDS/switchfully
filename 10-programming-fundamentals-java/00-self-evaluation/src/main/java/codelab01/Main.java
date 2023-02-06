@@ -20,6 +20,10 @@ public class Main {
     public static void printNumber(double number){
         System.out.println("I am a double: " +  number);
     }
+
+    public static int numberPlusOne(int number){
+        return number+1;
+    }
     public static void main(String[] args) {
         print_helloworld();
     }
