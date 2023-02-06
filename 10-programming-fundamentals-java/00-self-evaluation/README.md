@@ -54,13 +54,13 @@ Please do this after each finished codelab. It will help us in keeping track of 
 18. [:x:] **What value (`1/2` or `0.5` or `0`) will be printed for the following code? `System.out.println(1/2);`? Explain why?**
 19. [:x:] **What is the difference between `.java` and `.class` files?**
 20. [:x:] **What is the output of following code?**
-```java
+`java
 boolean isTrue = true;
 if(isTrue != false){
     System.out.println("It is true");
 }
 System.out.println("It is false");
-```
+`
 
 ### Questions OOP
 1. [:x:] **The term "instance variable" is another name for ___ ? And, what is it exactly?**
