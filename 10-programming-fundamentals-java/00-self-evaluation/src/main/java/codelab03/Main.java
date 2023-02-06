@@ -6,7 +6,21 @@ package codelab03;
 public class Main {
 
     public static char[][] createArrayForSize(int size) {
-        return null;
+        char[][] array = new char[size][size];
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                if(i == 0 || i == size-1){
+                    array[i][j] = '@';
+                }
+                else if(j == 0 || j == size-1){
+                    array[i][j] = '@';
+                }
+                else {
+                    array[i][j] = ' ';
+                }
+            }
+        }
+        return array;
     }
 
 }
