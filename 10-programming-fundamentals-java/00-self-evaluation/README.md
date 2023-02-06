@@ -105,7 +105,7 @@ The assignments themselves are written down in this file, in the following secti
 Sometimes, tests have been written to validate your solution. Use (run) them.  
 
 ### Codelab 01
-1. [:x:] Create a method that prints the string "Hello World!"
+1. [:heavy_check_mark:] Create a method that prints the string "Hello World!"
 2. [:x:] Create a method (`printAny`) that prints any string you give it.
 3. [:x:] Using method overloading, create two methods with the same name (`printNumber`).
     - Both have one parameter.
