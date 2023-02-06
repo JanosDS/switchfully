@@ -6,10 +6,11 @@ package codelab02;
 public class Main {
 
     public static char[] getAlphabet() {
-        return null;
+        return new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     }
 
     public static String[] replace3thElement(String[] strings) {
-        return null;
+        strings[2] = "do";
+        return strings;
     }
 }
