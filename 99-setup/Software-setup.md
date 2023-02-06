@@ -44,9 +44,9 @@ Download and install a browser
 1. Download the installer from: https://www.google.com/intl/en/chrome/
 2. Follow the steps in the wizard
 3. Bookmark following URLs:
-    * https://switchfully.com/classes/java-oct-2021/
+    * https://switchfully.com/classes/java-feb-2023/
     * https://github.com/switchfully/track-shared
-    * https://github.com/switchfully/java-oct-2021
+    * https://github.com/switchfully/java-feb-2023
     * https://switchfully.slack.com/
 
 ## Zoom
@@ -175,7 +175,7 @@ Add the maven bin folder to the `Path` (in the same way as you did for the JDK)
 ## Get started with the Switchfully java track
 > **_NOTE:_**\
 > Git Cheat Sheet https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
-1. Fork the java track: https://github.com/switchfully/java-oct-2021
+1. Fork the java track: https://github.com/switchfully/java-feb-2023
 2. Clone your fork into C:\_development\switchfully
 3. Open your project with IntellIj: File -> Open -> Select the "track-java"-folder
 4. Configure your sdk
