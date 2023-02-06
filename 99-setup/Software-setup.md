@@ -44,9 +44,8 @@ Download and install a browser
 1. Download the installer from: https://www.google.com/intl/en/chrome/
 2. Follow the steps in the wizard
 3. Bookmark following URLs:
-    * https://switchfully.com/classes/java-feb-2023/
-    * https://github.com/switchfully/track-shared
-    * https://github.com/switchfully/java-feb-2023
+    * https://github.com/switchfully/shared-2023-feb
+    * https://github.com/switchfully/java-2023-feb
     * https://switchfully.slack.com/
 
 ## Zoom
