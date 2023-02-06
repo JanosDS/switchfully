@@ -6,7 +6,14 @@ package codelab01;
  */
 public class Main {
     // Create your methods here
-    public static void main(String[] args) {
+    public static void print_helloworld(){
         System.out.println("Hello, World!");
+    }
+
+    public static void printAny(String string){
+        System.out.println(string);
+    }
+    public static void main(String[] args) {
+        print_helloworld();
     }
 }
