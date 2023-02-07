@@ -34,26 +34,51 @@ In **this file**, please replace every :x: with a check mark :heavy_check_mark: 
 Please do this after each finished codelab. It will help us in keeping track of your progress.
 
 ### Questions Basic
-1. [:x:] **What kind of types are there in Java?**
-2. [:x:] **What does 'declaring and initializing a variable' mean?**
-3. [:x:] **What is a statement? What is an expression? What is an operator?**
-4. [:x:] **What is `casting`? E.g. "I'm casting the value to an `int`"**
-5. [:x:] **What is the signature of a method?**
-6. [:x:] **What is method overloading?**
-7. [:x:] **What is method overriding (OOP)?**
-8. [:x:] **What is meant with "arguments are passed-by-value"?**
-9. [:x:] **Of what types can we create an array?**
-10. [:x:] **Can the size of an array change after instantiation?**
-11. [:x:] **What is the main difference (in use-case, not structure) of an If/Else statement and a Switch statement?**
-12. [:x:] **What is the main difference between primitive data types and reference types in Java?**
-13. [:x:] **What is the main difference between a While and Do-While loop (in execution, not structure)?**
-14. [:x:] **What is the main difference between a For and Foreach loop (in use-case, not structure)?**
-15. [:x:] **A variable declared within the opening and closing parenthesis of a method is called a ____ variable?**
-16. [:x:] **Why would you choose `long` over `int`?**
-17. [:x:] **What's the difference between `long` and `float`?**
-18. [:x:] **What value (`1/2` or `0.5` or `0`) will be printed for the following code? `System.out.println(1/2);`? Explain why?**
-19. [:x:] **What is the difference between `.java` and `.class` files?**
-20. [:x:] **What is the output of following code?**
+1. [:heavy_check_mark:] **What kind of types are there in Java?**
+    - Primitive and reference types
+2. [:heavy_check_mark] **What does 'declaring and initializing a variable' mean?**
+    - Creating the memory space, and assigning a value 
+3. [:heavy_check_mark:] **What is a statement? What is an expression? What is an operator?**
+    - Statement: instructions that tell the programming language what to do, like declaration and string statements
+    - Expression: a series of operators, variables, and method calls constructed according to the syntax
+    - Operator: A symbol to indicate an operation to be executed on a variable
+4. [:heavy_check_mark:] **What is `casting`? E.g. "I'm casting the value to an `int`"**
+    - Assiging the value of a variable, to a variable of a different type
+5. [:heavy_check_mark:] **What is the signature of a method?**
+    - name + method params
+6. [:heavy_check_mark:] **What is method overloading?**
+    - more than one method with the same name (but different param(s))
+7. [:heavy_check_mark:] **What is method overriding (OOP)?**
+    - When a subclass overwrites a parents method
+8. [:heavy_check_mark:] **What is meant with "arguments are passed-by-value"?**
+    - only the value of the variable is passed, not the "original variable" -> no reference to the var is passed
+9. [:heavy_check_mark:] **Of what types can we create an array?**
+    - All types
+10. [:heavy_check_mark:] **Can the size of an array change after instantiation?**
+    - No
+11. [:heavy_check_mark:] **What is the main difference (in use-case, not structure) of an If/Else statement and a Switch statement?**
+    - Switch case: used for ints and chars -> binairy search
+    - if-else: used for ints, string, chars, pointers, floats -> liniair search
+12. [:heavy_check_mark:] **What is the main difference between primitive data types and reference types in Java?**
+    - Primitive: Primitive types are the most basic data types available within the Java language. There are 8: boolean , byte , char , short , int , long , float and double .
+    - Reference: reference data types are class, Arrays, String, Interface
+13. [:heavy_check_mark:] **What is the main difference between a While and Do-While loop (in execution, not structure)?**
+    - While will check the condition before executing, do-while checks after execution
+14. [:heavy_check_mark:] **What is the main difference between a For and Foreach loop (in use-case, not structure)?**
+    - for has an index, foreach not
+15. [:heavy_check_mark:] **A variable declared within the opening and closing parenthesis of a method is called a ____ variable?**
+    - local
+16. [:heavy_check_mark:] **Why would you choose `long` over `int`?**
+    - long for numbers over 2billion (long: 64bits, int: 32bits)
+17. [:heavy_check_mark:] **What's the difference between `long` and `float`?**
+    - float= higher range
+    - long= higher precision
+18. [:heavy_check_mark:] **What value (`1/2` or `0.5` or `0`) will be printed for the following code? `System.out.println(1/2);`? Explain why?**
+    - 0 -> 1/2 = 0 (int) -> string
+19. [:heavy_check_mark:] **What is the difference between `.java` and `.class` files?**
+    - .java: A file containing Java source code
+    - .class: contains the Java bytecode produced by the Java compiler
+20. [:heavy_check_mark:] **What is the output of following code?**
 `java
 boolean isTrue = true;
 if(isTrue != false){
@@ -61,6 +86,7 @@ if(isTrue != false){
 }
 System.out.println("It is false");
 `
+    - It is true
 
 ### Questions OOP
 1. [:x:] **The term "instance variable" is another name for ___ ? And, what is it exactly?**
