@@ -11,7 +11,8 @@ public class VTCodelab09 {
         // ----------------
         // Declare and initialize a char variable, as it's value, use 'AB'
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        //char a = 'AB';
+        // Does not work -> Chars are 1 character (not 2)
     }
 
 }

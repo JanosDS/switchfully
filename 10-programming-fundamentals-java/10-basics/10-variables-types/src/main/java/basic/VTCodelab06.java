@@ -12,7 +12,9 @@ public class VTCodelab06 {
         // Declare and initialize a long variable
         // Declare an int variable and initialize it with the above long variable
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        long x = 10;
+        //int y = long;
+        // This does not work since a long is bigger than an int
     }
 
 }

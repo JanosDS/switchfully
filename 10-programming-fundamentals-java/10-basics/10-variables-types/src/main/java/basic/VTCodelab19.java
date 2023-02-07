@@ -14,7 +14,10 @@ public class VTCodelab19 {
         // Does it work? Write a comment on why (not)?
         // Print the result using: System.out.println("Printing an int initialized with a cast double: " + <YOUR_LONG_VARIABLE_NAME>);
         // Do you notice something about what is printed?
-
+        double x = 45.95;
+        int y = (int)x;
+        System.out.println("Printing an int initialized with a cast double: " + y);
+        // Value of int stops at the decimal point
     }
 
 }

@@ -11,6 +11,8 @@ public class VTCodelab10 {
         // ----------------
         // Print out the characters 'H' 'E' 'L' 'L' 'O' in this exact order, on one line
         // It's possible a number instead of HELLO is printed, why do you think this is?
+        System.out.println('H' + 'E' + 'L' + 'L' + 'O');
+        System.out.println("This is a number, because the unicodes are getting added");
 
     }
 

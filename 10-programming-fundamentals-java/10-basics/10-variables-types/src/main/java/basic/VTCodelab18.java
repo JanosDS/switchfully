@@ -12,7 +12,9 @@ public class VTCodelab18 {
         // Declare and initialize a double variable, give it value 45.95
         // Declare an int variable, initialize it with the double variable
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        double x = 45.95;
+        //int y = x;
+        //Does not work, int can not have decimals
     }
 
 }

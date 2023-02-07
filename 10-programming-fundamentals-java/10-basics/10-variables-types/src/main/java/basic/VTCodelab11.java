@@ -11,7 +11,8 @@ public class VTCodelab11 {
         // ----------------
         // Declare and initialize a boolean variable, give it value true
         // Print the result using: System.out.println("Printing boolean which should be true: " + <YOUR_VARIABLE_NAME>);
-
+        boolean x = true;
+        System.out.println("Printing boolean which should be true: " + x);
     }
 
 }

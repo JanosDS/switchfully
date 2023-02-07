@@ -12,7 +12,9 @@ public class VTCodelab15 {
         // Declare and initialize a int variable named uniqueInt
         // Declare and initialize another int variable, also name it uniqueInt
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        int uniqueInt = 20;
+        //int uniqueInt = 30;
+        // Does not work, variables can only be initialised once
     }
 
 }

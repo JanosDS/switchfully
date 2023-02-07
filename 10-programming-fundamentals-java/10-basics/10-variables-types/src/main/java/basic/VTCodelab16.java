@@ -13,7 +13,10 @@ public class VTCodelab16 {
         // Declare a long variable, initialize it with the int variable
         // Does it work? Write a comment on why (not)?
         // Print the result using: System.out.println("Printing a long initialized with an int: " + <YOUR_LONG_VARIABLE_NAME>);
-
+        int x = 10;
+        long y = x;
+        System.out.println("Printing a long initialized with an int: " + y);
+        //This works because an int is smaller than a long
     }
 
 }

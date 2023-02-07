@@ -11,7 +11,8 @@ public class VTCodelab05 {
         // ----------------
         // Declare and initialize a double variable
         // Print the result using: System.out.println("Printing double with value: " + <YOUR_VARIABLE_NAME>);
-
+        double x = 100;
+        System.out.println("Printing double with value: " + x);
     }
 
 }

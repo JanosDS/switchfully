@@ -14,7 +14,11 @@ public class VTCodelab07 {
         // Declare a new int variable named myInt3, initialize it with myInt2
         // Declare a new int variable named myInt4, initialize it with myInt3
         // Print the result using: System.out.println("Printing myInt4 with value: " + myInt4);
-
+        int myInt1 = 5;
+        int myInt2 = myInt1;
+        int myInt3 = myInt2;
+        int myInt4 = myInt3;
+        System.out.println("Printing myInt4 with value: " + myInt4);
     }
 
 }

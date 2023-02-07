@@ -11,7 +11,8 @@ public class VTCodelab14 {
         // ----------------
         // Declare and initialize a double variable, name it while
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        //double while = 20;
+        // Does not work -> while is a reserved key word
     }
 
 }

@@ -11,7 +11,8 @@ public class VTCodelab13 {
         // ----------------
         // Declare and initialize a boolean variable, try giving it a different value than true or false
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        //boolean x = waar;
+        //Does not work bools can only be true of false
     }
 
 }
