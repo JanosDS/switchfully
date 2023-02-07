@@ -89,12 +89,18 @@ System.out.println("It is false");
     - It is true
 
 ### Questions OOP
-1. [:x:] **The term "instance variable" is another name for ___ ? And, what is it exactly?**
-2. [:x:] **The term "class variable" is another name for ___ ?**
-3. [:x:] **What are parameters?**
-4. [:x:] **What are arguments?**
-5. [:x:] **What is the return type void?**
-6. [:x:] **What's an object? What's a class?**
+1. [:heavy_check_mark:] **The term "instance variable" is another name for ___ ? And, what is it exactly?**
+    - object variable, variable specific to a certain object
+2. [:heavy_check_mark:] **The term "class variable" is another name for ___ ?**
+    - A static variable: a variable defined in a class of which a single copy exists, regardless of how many instances of the class exist.
+3. [:heavy_check_mark:] **What are parameters?**
+    - variables used to define a particular value during a function definition
+4. [:heavy_check_mark:] **What are arguments?**
+    - the actual values that are passed to variables defined in the method header when the method is called from another method.
+5. [:heavy_check_mark:] **What is the return type void?**
+    - Nothing gets returned
+6. [:heavy_check_mark:] **What's an object? What's a class?**
+    - An object is an instance of a class
 7. [:x:] **What's state? What's behavior?**
 8. [:x:] **What is an instance?**
 9. [:x:] **How do we create an object from a class?**
