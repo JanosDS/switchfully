@@ -12,7 +12,8 @@ public class VTCodelab05 {
         // Declare and initialize a byte variable, give it value 250
         // Print the result using: System.out.println("Printing byte with value: " + <YOUR_VARIABLE_NAME>);
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        //byte x = 250;
+        // Does not work -> range value of a byte is -128 to 127
     }
 
 }

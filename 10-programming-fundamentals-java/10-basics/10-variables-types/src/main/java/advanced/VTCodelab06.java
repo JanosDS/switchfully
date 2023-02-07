@@ -13,6 +13,9 @@ public class VTCodelab06 {
         // Declare a byte variable, initialize it with the short variable, cast it to a byte
         // Print the result using: System.out.println("Printing a byte initialized with a cast short (127): " + <YOUR_BYTE_VARIABLE_NAME>);
         // Looks as expected, right?
+        short x = 127;
+        byte y = (byte)x;
+        System.out.println("Printing a byte initialized with a cast short (127): " + y);
 
     }
 

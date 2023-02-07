@@ -12,7 +12,9 @@ public class VTCodelab04 {
         // Declare and initialize a byte variable
         // Declare a short variable and initialize it with the above byte variable
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
-
+        byte x = 100;
+        short y = x;
+        //Works -> byte is smaller than a short
     }
 
 }
