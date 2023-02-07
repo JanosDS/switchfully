@@ -1,48 +1,52 @@
 # Which part of the following method is it's signature?
-```java
+`java
         public void printName(String name){
             System.out.println("Hello my name is: " + name)
         }
-```
+`
+printName(String name)
 
 # Will the following method pairs be in conflict with each other?
 
 1. 
-```java
+`java
         public int printName(String name){
             return System.out.println(name);
         }
-```
+`
 and
-```java
+`java
         public double printName(int number){
             return System.out.println(name);
         }
-```
+`
+No -> depending on the input the right method will be used
 
 
 2. 
-```java
+`java
         public int sum(int left, int right){
             return left + right;
         }
-```
+`
 and
-```java
+`java
         public double sum(int left, int right){
             return (double) left + right;
         }
-```
+`
+ Yes, these will conflict
 
 3.
-```java
+`java
         public int sum(int left, int right){
             return left + right;
         }
-```
+`
 and
-```java
+`java
         public double sumDouble(int left, int right){
             return (double) left + right;
         }
-```
+`
+No
