@@ -1,5 +1,7 @@
 package basic;
 
+import java.util.regex.Pattern;
+
 public class StringsCodelab05 {
 
     public static void main(String[] args) {
@@ -18,8 +20,8 @@ public class StringsCodelab05 {
      * Also: search how you can convert a char to a String, you'll need this as well.
      */
     public static String replaceCharacter(String text, char characterToReplace, char characterToReplaceWith) {
-        // implement me as described
-        return null;
+        String regex = "(?i)[" + characterToReplace +"]";
+        return text.replaceAll( regex, Character.toString(characterToReplaceWith));
     }
 
 }

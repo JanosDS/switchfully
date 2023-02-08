@@ -14,8 +14,7 @@ public class StringsCodelab04 {
      * Using the documentation of String, search for the indexOf method, you'll need it.
      */
     public static int findIndexOfWord(String text, String wordToFind) {
-        // implement me as described
-        return -1;
+        return text.indexOf(wordToFind);
     }
 
 }

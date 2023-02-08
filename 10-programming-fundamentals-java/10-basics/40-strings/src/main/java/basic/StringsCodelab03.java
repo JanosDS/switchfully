@@ -16,8 +16,9 @@ public class StringsCodelab03 {
      * Using the documentation of String, search for the substring method, you'll need it.
      */
     public static String wrapWord(String wrapper, String wordToBeWrapped) {
-        // implement me as described
-        return null;
+        int half = wrapper.length() / 2;
+        String[] wrappers = {wrapper.substring(0,half), wrapper.substring(half)};
+        return wrappers[0] + wordToBeWrapped + wrappers[1];
     }
 
 }

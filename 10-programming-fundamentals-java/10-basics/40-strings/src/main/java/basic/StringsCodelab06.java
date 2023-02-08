@@ -15,8 +15,7 @@ public class StringsCodelab06 {
      *      e.g.: "Hello", should return "HelloHello"
      */
     public static String doubleText(String text) {
-        // implement me as described
-        return null;
+        return text + text;
     }
 
     /**
@@ -27,8 +26,7 @@ public class StringsCodelab06 {
      *      e.g.: "Hello" (originalText) and "Hello" (doubledText) should return false
      */
     public static boolean isCorrectlyDoubled(String originalText, String doubledText) {
-        // implement me as described
-        return false;
+        return (originalText + originalText).equals(doubledText);
     }
 
 }

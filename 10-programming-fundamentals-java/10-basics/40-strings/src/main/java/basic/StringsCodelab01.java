@@ -5,6 +5,7 @@ public class StringsCodelab01 {
     public static void main(String[] args) {
         System.out.println(helloName("Mom"));
         System.out.println(helloName("Dad"));
+        helloName("Karl");
     }
 
     /**
@@ -14,8 +15,7 @@ public class StringsCodelab01 {
      *        helloName("Moon") → "Hello Moon!"
      */
     public static String helloName(String name) {
-        // implement me as described
-        return null;
+        return "Hello " + name + "!";
     }
 
 }
