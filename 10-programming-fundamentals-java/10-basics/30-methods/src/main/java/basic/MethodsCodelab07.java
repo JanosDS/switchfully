@@ -10,6 +10,20 @@ public class MethodsCodelab07 {
         // Transform the following equation using only your newly created methods. Print out the result:
         //  --> ((4.5 + 3.5) / 2.0) + (2.0 * (4.5 - 1.5))
         //  --> e.g.: (1 + 1) should we written as add(1, 1)
+        System.out.println(add(divide(add(4.5,3.5), 2.0), multiply(2.0, substract(4.5,1.5))));
+    }
+
+    public static double add(double numb1, double numb2){
+        return numb1 + numb2;
+    }
+    public static double substract(double numb1, double numb2){
+        return numb1 - numb2;
+    }
+    public static double multiply(double numb1, double numb2){
+        return  numb1 * numb2;
+    }
+    public static double divide(double numb1, double numb2){
+        return numb1 / numb2;
     }
 
 }

@@ -8,6 +8,9 @@ public class MethodsCodelab03 {
         //      2. Using value 250 and 5%
         //      3. Using 625 and 25%
         // Make sure to print (write to the console) each result.
+        System.out.println(calculatePercentageValue(100, 0.8f));
+        System.out.println(calculatePercentageValue(250, 0.05f));
+        System.out.println(calculatePercentageValue(625, 0.25f));
     }
 
     /**

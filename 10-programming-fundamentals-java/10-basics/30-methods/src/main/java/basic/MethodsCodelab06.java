@@ -9,6 +9,11 @@ public class MethodsCodelab06 {
         // call the add method with arguments 80.51 and 10.01 and print the result
         // is there something wrong with the result? Try to solve this.
         // check the solutions folder if you can't find a way to show the correct result
+        String str = String.format("%1.2f", add(80.51, 10.01)); //cut off part of double
+        System.out.println(str);
     }
 
+    public static double add(double numb1, double numb2){
+        return numb1 + numb2;
+    }
 }

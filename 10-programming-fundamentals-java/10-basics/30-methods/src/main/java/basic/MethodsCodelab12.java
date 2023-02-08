@@ -1,5 +1,7 @@
 package basic;
 
+import java.time.Year;
+
 public class MethodsCodelab12 {
 
     public static void main(String[] args) {
@@ -13,41 +15,35 @@ public class MethodsCodelab12 {
 
         String name1 = "Jef";
         int birthYear1 = 1988;
-        int age1 = 2021 - birthYear1;
-        boolean isAdult1;
-        if(age1 > 18) {
-            isAdult1 = true;
-        } else {
-            isAdult1 = false;
-        }
+        printPersGeg(name1, calcAge(birthYear1));
+
         String name2 = "Sofie";
         int birthYear2 = 2005;
-        int age2 = 2021 - birthYear2;
-        boolean isAdult2;
-        if(age2 > 18) {
-            isAdult2 = true;
-        } else {
-            isAdult2 = false;
-        }
+        printPersGeg(name2, calcAge(birthYear2));
 
+    }
+
+    public static void printPersGeg(String name, int age){
         System.out.println("***********************");
-        System.out.println("Hi my name is " + name1);
-        System.out.println("I am " + age1 + " years old.");
+        System.out.println("Hi my name is " + name);
+        System.out.println("I am " + age + " years old.");
         System.out.println("Which means I am");
-        if(isAdult1) {
+        if(isAdult(age)){
             System.out.println("an adult");
         } else {
             System.out.println("not an adult");
         }
+    }
 
-        System.out.println("***********************");
-        System.out.println("Hi my name is " + name2);
-        System.out.println("I am " + age2 + " years old.");
-        System.out.println("Which means I am");
-        if(isAdult2) {
-            System.out.println("an adult");
+    public static boolean isAdult(int age){
+        if(age > 18) {
+            return true;
         } else {
-            System.out.println("not an adult");
+            return false;
         }
+    }
+
+    public static int calcAge(int birthyear){
+        return Year.now().getValue() - birthyear;
     }
 }

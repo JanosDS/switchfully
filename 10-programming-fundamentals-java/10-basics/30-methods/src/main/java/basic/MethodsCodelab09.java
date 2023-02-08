@@ -10,6 +10,19 @@ public class MethodsCodelab09 {
         // Overload method easyPrint so that it takes a double (i.e. valueToPrint) as parameter
         //      and prints the following message: "Easy printing value: <valueToPrint>"
         // Call easyPrint (3 times) with values 105, "Mark" and 80.45
+        easyPrint(105);
+        easyPrint("Mark");
+        easyPrint(80.45);
+    }
+
+    public static void easyPrint(int i){
+        System.out.println("Easy printing value: " + i);
+    }
+    public static  void easyPrint(String str){
+        System.out.println("Easy printing string: " + str);
+    }
+    public static void easyPrint(double i){
+        System.out.println("Easy printing value: " + i);
     }
 
 }
