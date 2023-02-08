@@ -20,5 +20,14 @@ public class ExpressionsCodelab03 {
         int second = 3;
 
         int result = second-- + 3 + 2 * 4 / ++first - (2 + --second) % 2 + ++first + second;
+        // 3 + 3 + 2 * 4 / 2 - (2 + 1) % 2 + 3 + 1
+        // 3 + 3 + 8/2 - 3%2 + 3 + 1
+        // 6 + 4 - 1 + 3 +1
+        // 13
+        // first = 3
+        // second = 1
+        System.out.println(result);
+        System.out.println(second);
+        System.out.println(first);
     }
 }

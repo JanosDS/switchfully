@@ -11,7 +11,10 @@ public class ExpressionsCodelab01 {
         // ----------------
         // Create a short variable that holds the product of 2 other short variables (with values 5 and 105)
         // Does it work? Write a comment on why (not)
-
+        short numb1 = 5;
+        short numb2 = 105;
+        //short prod = numb1 * numb2;
+        // does not work -> product results in an int -> cant be cast to a short
     }
 
 }
