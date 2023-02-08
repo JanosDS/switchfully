@@ -16,5 +16,6 @@ public class ExpressionsCodelab09 {
         int result = 5 + 4 * 3 + ((4 + 5) * (2 - 3)) * 4 * 3 - 2 * 5 % (5 + 4) + 100;
 
         // Why is an expression like this so hard to read and how would you make it better should this be a real example?
+        // -> lots of operators in different orders, possible to make order clearer by adding more brackets
     }
 }
