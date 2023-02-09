@@ -1,4 +1,4 @@
-package advanced.solutions;
+package basic.solutions;
 
 import java.util.Arrays;
 
@@ -13,12 +13,12 @@ public class ArraysCodelab05Solution {
      * Start with a String array and a String replaceWord
      * Replace the element, on index 2 of the array, with replacingWord
      * If the array contains 2 or fewer elements, return the array as is
-     *      replaceThirdWord(["This", "is", "really", "very", "funny"], "not") → ["This", "is", "not", "very", "funny"]
-     *      replaceThirdWord(["This", "is", "funny"], "Sparta!") → ["This", "is", "Sparta"]
-     *      replaceThirdWord(["Not", "Working"], "PewPew") → ["Not", "Working"]
+     * replaceThirdWord(["This", "is", "really", "very", "funny"], "not") → ["This", "is", "not", "very", "funny"]
+     * replaceThirdWord(["This", "is", "funny"], "Sparta!") → ["This", "is", "Sparta"]
+     * replaceThirdWord(["Not", "Working"], "PewPew") → ["Not", "Working"]
      */
     public static String[] replaceThirdWord(String[] words, String replacingWord) {
-        if(words.length <= 2) {
+        if (words.length <= 2) {
             return words;
         }
         words[2] = replacingWord;
