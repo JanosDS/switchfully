@@ -19,7 +19,7 @@ public class DecisionMakingCodelab06 {
      * Adapt your solution with guard clauses so that even if the user writes something unexpected, your program still behaves in a logical way.
      */
     public static void main(String[] args) {
-        String input = new String();
+        String input = "";
         do{
             input = askInput();
         }while(!validateInput(input));
@@ -33,10 +33,7 @@ public class DecisionMakingCodelab06 {
     }
 
     public static boolean validateInput(String input){
-        if(input.equals("hello") || input.equals("goodbye") ){
-            return true;
-        }
-        return  false;
+        return input.equals("hello") || input.equals("goodbye");
     }
 
     public static void reply(String input){

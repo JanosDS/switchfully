@@ -13,7 +13,7 @@ public class DecisionMakingCodelab07 {
      * Hint: You can make use of the isInteger() function to help you.
      */
     public static void main(String[] args) {
-        String input = new String();
+        String input = "";
         do{
             input = askInput();
         }while(!isInteger(input));

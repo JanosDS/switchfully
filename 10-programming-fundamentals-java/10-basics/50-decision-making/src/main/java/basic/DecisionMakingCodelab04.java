@@ -18,10 +18,10 @@ public class DecisionMakingCodelab04 {
         if(cardValue1 > 21 && cardValue2 > 21){
             return 0;
         }
-        else if(cardValue1 > 21 && cardValue2 <= 21){
+        else if(cardValue1 > 21){
             return cardValue2;
         }
-        else if(cardValue1 <= 21 && cardValue2 > 21){
+        else if(cardValue2 > 21){
             return cardValue1;
         }
         else{
