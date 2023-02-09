@@ -13,13 +13,14 @@ public class DecisionMakingCodelab07 {
      * Hint: You can make use of the isInteger() function to help you.
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Please provide a number: ");
-        String userInput = scanner.nextLine();
+        String input = new String();
+        do{
+            input = askInput();
+        }while(!isInteger(input));
 
         System.out.println("*******************");
         System.out.println();
-        System.out.println(squareRoot(userInput));
+        System.out.println(squareRoot(input));
     }
 
     private static String squareRoot(String number) {
@@ -37,5 +38,11 @@ public class DecisionMakingCodelab07 {
         } catch (NumberFormatException exception) {
             return false;
         }
+    }
+
+    private static String askInput(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please provide a number: ");
+        return scanner.nextLine();
     }
 }

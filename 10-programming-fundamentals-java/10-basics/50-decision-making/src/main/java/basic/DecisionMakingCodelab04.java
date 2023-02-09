@@ -15,7 +15,18 @@ public class DecisionMakingCodelab04 {
      *      playBlackjack(19, 22) → 19
      */
     public static int playBlackjack(int cardValue1, int cardValue2) {
-        throw new UnsupportedOperationException("Implement me");
+        if(cardValue1 > 21 && cardValue2 > 21){
+            return 0;
+        }
+        else if(cardValue1 > 21 && cardValue2 <= 21){
+            return cardValue2;
+        }
+        else if(cardValue1 <= 21 && cardValue2 > 21){
+            return cardValue1;
+        }
+        else{
+            return Math.max(cardValue1, cardValue2);
+        }
     }
 
 

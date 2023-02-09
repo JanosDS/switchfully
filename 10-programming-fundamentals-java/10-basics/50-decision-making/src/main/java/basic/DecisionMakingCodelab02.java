@@ -19,8 +19,14 @@ public class DecisionMakingCodelab02 {
      * playLottery(18, 4, 4) → 0
      * playLottery(18, 4, 8) → 5
     */
-    public static int playLottery(int lotteryNumberA, int lotteryNumberB, int lotteryNumberC) {
-        throw new UnsupportedOperationException("Implement me");
+    public static int playLottery(int a, int b, int c) {
+        if( (a+b) == 10 || (a+c) == 10 || (b+c) == 10 ){
+            return 10;
+        }
+        else if((a+b) == (b+c+10) || (a+b) == (a+c+10)){
+            return 5;
+        }
+        return 0;
     }
 
 
