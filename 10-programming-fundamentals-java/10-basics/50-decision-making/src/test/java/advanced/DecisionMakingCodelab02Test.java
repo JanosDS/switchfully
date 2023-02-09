@@ -39,7 +39,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingHockeyWillPrintOutFootballDescription() {
+    void ifProvidingHockeyWillPrintOutHockeyDescription() {
         printOutSport("Hockey");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Hockey
@@ -52,7 +52,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingRugbyWillPrintOutFootballDescription() {
+    void ifProvidingRugbyWillPrintOutRugbyDescription() {
         printOutSport("Rugby");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Rugby
@@ -65,7 +65,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingArcheryWillPrintOutFootballDescription() {
+    void ifProvidingArcheryWillPrintOutArcheryDescription() {
         printOutSport("Archery");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Archery
@@ -78,33 +78,33 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingTennisWillPrintOutFootballDescription() {
+    void ifProvidingTennisWillPrintOutTennisDescription() {
         printOutSport("Tennis");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Tennis
                 Description: You hit a ball with a racket over a net, in the hope that the guy on the other side of the net can't do the same.
                 Popularity: 2
-                This sport is not played with a ball
+                This sport is played with a ball
                 This sport is not a team sport
                 """
         );
     }
 
     @Test
-    void ifProvidingHandballWillPrintOutFootballDescription() {
+    void ifProvidingHandballWillPrintOutHandballDescription() {
         printOutSport("Handball");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Handball
                 Description: You throw a ball away and then run after it.
                 Popularity: 4
-                This sport is not played with a ball
+                This sport is played with a ball
                 This sport is a team sport
                 """
         );
     }
 
     @Test
-    void ifProvidingOtherSportWillPrintOutFootballDescription() {
+    void ifProvidingOtherSportWillPrintOutOtherSportDescription() {
         printOutSport("Judo");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Judo
