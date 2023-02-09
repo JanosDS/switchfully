@@ -84,7 +84,7 @@ class DecisionMakingCodelab02Test {
                 You have selected Tennis
                 Description: You hit a ball with a racket over a net, in the hope that the guy on the other side of the net can't do the same.
                 Popularity: 2
-                This sport is not played with a ball
+                This sport is played with a ball
                 This sport is not a team sport
                 """
         );
@@ -97,7 +97,7 @@ class DecisionMakingCodelab02Test {
                 You have selected Handball
                 Description: You throw a ball away and then run after it.
                 Popularity: 4
-                This sport is not played with a ball
+                This sport is played with a ball
                 This sport is a team sport
                 """
         );
@@ -111,7 +111,7 @@ class DecisionMakingCodelab02Test {
                 Description: Unknown sport
                 Popularity: 3
                 This sport is not played with a ball
-                This sport is a team sport
+                This sport is not a team sport
                 """
         );
     }

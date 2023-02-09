@@ -19,63 +19,48 @@ public class DecisionMakingCodelab02 {
      * What are the advantages/disadvantages?
      */
     public static void printOutSport(String sport) {
-        int popularity;
-        String description;
-        boolean hasBall;
-        boolean teamSport;
-        switch (sport) {
-            case "Football":
-                System.out.println("You have selected Football");
-                popularity = 1;
-                description = "You kick a ball away and then run after it.";
-                hasBall = true;
-                teamSport = true;
-                break;
-            case "Hockey":
-                System.out.println("You have selected Hockey");
-                popularity = 2;
-                description = "You kick a ball away with a stick and then run after it.";
-                hasBall = true;
-                teamSport = true;
-                break;
-            case "Rugby":
-                System.out.println("You have selected Rugby");
-                popularity = 3;
-                description = "You run away with a ball and other people try to stop you by ramming you.";
-                hasBall = true;
-                teamSport = true;
-                break;
-            case "Archery":
-                System.out.println("You have selected Archery");
-                popularity = 4;
-                description = "You try to hit a target with an arrow shot from a bow.";
-                hasBall = false;
-                teamSport = false;
-                break;
-            case "Tennis":
-                System.out.println("You have selected Tennis");
-                popularity = 2;
-                description = "You hit a ball with a racket over a net, in the hope that the guy on the other side of the net can't do the same.";
-                hasBall = false;
-                teamSport = false;
-                break;
-            case "Handball":
-                System.out.println("You have selected Handball");
-                popularity = 4;
-                description = "You throw a ball away and then run after it.";
-                hasBall = false;
-                teamSport = true;
-                break;
-            default:
-                System.out.println("You have selected " + sport);
-                description = "Unknown sport";
-                popularity = 3;
-                hasBall = false;
-                teamSport = true;
-        }
-        System.out.println("Description: " + description);
-        System.out.println("Popularity: " + popularity);
-        System.out.println("This sport is " + (hasBall? "" : "not ") + "played with a ball");
-        System.out.println("This sport is " + (teamSport? "" : "not ") + "a team sport");
+        System.out.println("You have selected " + sport);
+        System.out.println("Description: " + description(sport));
+        System.out.println("Popularity: " + popularity(sport));
+        System.out.println("This sport is " + (hasBall(sport) ? "" : "not ") + "played with a ball");
+        System.out.println("This sport is " + (isTeamSport(sport) ? "" : "not ") + "a team sport");
+    }
+
+    private static int popularity(String sport) {
+        return switch (sport) {
+            case "Football" -> 1;
+            case "Hockey" -> 2;
+            case "Rugby" -> 3;
+            case "Archery" -> 4;
+            case "Tennis" -> 2;
+            case "Handball" -> 4;
+            default -> 3;
+        };
+    }
+    private static String description(String sport) {
+        return switch (sport) {
+            case "Football" -> "You kick a ball away and then run after it.";
+            case "Hockey" -> "You kick a ball away with a stick and then run after it.";
+            case "Rugby" -> "You run away with a ball and other people try to stop you by ramming you.";
+            case "Archery" -> "You try to hit a target with an arrow shot from a bow.";
+            case "Tennis" -> "You hit a ball with a racket over a net, in the hope that the guy on the other side of the net can't do the same.";
+            case "Handball" -> "You throw a ball away and then run after it.";
+            default -> "Unknown sport";
+        };
+    }
+    private static boolean hasBall(String sport){
+        return switch (sport) {
+            case "Football", "Hockey", "Rugby", "Tennis", "Handball"-> true;
+            case "Archery" -> false;
+            default -> false;
+        };
+    }
+
+    private static boolean isTeamSport(String sport){
+        return switch(sport){
+            case "Football", "Hockey", "Rugby", "Handball"-> true;
+            case "Tennis", "Archery" -> false;
+            default -> false;
+        };
     }
 }
