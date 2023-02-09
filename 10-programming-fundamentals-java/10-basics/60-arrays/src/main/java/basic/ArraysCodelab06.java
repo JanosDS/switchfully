@@ -30,10 +30,16 @@ public class ArraysCodelab06 {
     }
 
     public static String getWinner(String[] standings) {
-        return null;
+        if(standings.length == 0 || standings == null){
+            return null;
+        }
+        return standings[0];
     }
 
     public static String getLoser(String[] standings) {
-        return null;
+        if(standings.length == 0 || standings == null){
+            return null;
+        }
+        return standings[standings.length-1];
     }
 }
