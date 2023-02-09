@@ -15,14 +15,18 @@ public class ArraysCodelab08 {
      *      - In case of an edge case you can print out "Apartment <number> does not exist."
      */
     public static void main(String[] args) {
-        String[] tenantNames = {"Marc", "Jef", "Sophie", "Laure", "Karen", "John"};
+        String[] tenantNames = {"Marc", "Jef", "Sophie", "Laura", "Karen", "John"};
         boolean[] hasPaidRent = {true, false, false, true, true, false};
 
         printOutTenantStatus(3, tenantNames, hasPaidRent);
     }
 
     public static void printOutTenantStatus(int apartmentNumber, String[] tenantNames, boolean[] hasPaidRent) {
-
+        if(apartmentNumber <= 0 || apartmentNumber > tenantNames.length-1){
+            System.out.println("Apartment " + apartmentNumber + " does not exist.");
+        } else {
+            System.out.println(tenantNames[apartmentNumber-1] + " has " + (hasPaidRent[apartmentNumber-1] ? "" : "not ") + "paid his/her rent.");
+        }
     }
 
 
