@@ -15,6 +15,6 @@ public class LoopsCodelabs09 {
      * fibonacci(n) = fibonacci(n - 1) + fibonacci (n - 2)
      */
     public static int fibonacci(int number) {
-        return 0;
+        return (int)Math.round( Math.pow(1+ Math.sqrt(5), number) / (Math.pow(2, number) * Math.sqrt(5)));
     }
 }

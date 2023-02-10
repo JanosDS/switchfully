@@ -1,5 +1,7 @@
 package advanced;
 
+import java.util.ArrayList;
+
 public class LoopsCodelabs04 {
 
     /**
@@ -17,7 +19,27 @@ public class LoopsCodelabs04 {
      *      getElementsAfter4([]) → [4]
      */
     public static int[] getElementsAfter4(int[] numbers) {
-        throw new UnsupportedOperationException("Implement me");
+        if(numbers.length == 0 || numbers == null){
+            return new int[]{4};
+        }
+        int indexLast4 = 0;
+        for(int i = 0; i < numbers.length; i++){
+            if(numbers[i] == 4){
+                indexLast4 = i;
+            }
+        }
+
+        if(indexLast4 == numbers.length-1 || indexLast4 == 0){
+            return new int[]{4};
+        }
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        int index = indexLast4+1;
+        while (index < numbers.length){
+            list.add(numbers[index]);
+            index++;
+        }
+        return list.stream().mapToInt(i -> i).toArray();
     }
 
 }

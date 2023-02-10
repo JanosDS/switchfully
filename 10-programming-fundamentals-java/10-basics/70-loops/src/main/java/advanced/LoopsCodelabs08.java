@@ -1,5 +1,7 @@
 package advanced;
 
+import java.util.Arrays;
+
 public class LoopsCodelabs08 {
 
     /**
@@ -14,7 +16,15 @@ public class LoopsCodelabs08 {
      *      doesOuterContainAllElementsOfInner([1, 2, 8, 800, 1050], [1, 800]) → true
      */
     public static boolean doesOuterContainAllElementsOfInner(int[] outer, int[] inner) {
-        throw new UnsupportedOperationException("Implement me");
+        if(outer.length < inner.length){
+            throw new IllegalArgumentException("Inner cannot be bigger than outer");
+        }
+        for(int number : inner){
+            if( !Arrays.stream(outer).anyMatch(i -> i == number)){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

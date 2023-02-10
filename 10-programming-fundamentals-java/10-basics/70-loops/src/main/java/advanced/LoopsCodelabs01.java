@@ -37,5 +37,17 @@ public class LoopsCodelabs01 {
      * Now try to combine these two methods!
      */
     public static void triangle(int height) {
+        for(int i = 0; i < height; i++){
+            System.out.println(makeLine(i+1));
+        }
+    }
+
+    private static String makeLine(int length){
+        String line = "";
+        while(length > 0){
+            line += "*";
+            length--;
+        }
+        return line;
     }
 }

@@ -1,5 +1,8 @@
 package advanced;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoopsCodelabs02 {
 
     /**
@@ -10,7 +13,23 @@ public class LoopsCodelabs02 {
      * Tip: "cat" and "dog" both have length 3...
      */
     public static boolean catDog(String textToAnalyze) {
-        throw new UnsupportedOperationException("Implement me");
+        if(textToAnalyze.length() == 0){
+            return false;
+        }
+        int amountCat = counter(textToAnalyze, "cat");
+        int amountDog = counter(textToAnalyze, "dog");
+
+        return amountDog == amountCat;
+    }
+
+    private static int counter(String toAnalyse, String str){
+        Pattern pattern = Pattern.compile(str);
+        Matcher strMatcher = pattern.matcher(toAnalyse);
+        int count = 0;
+        while (strMatcher.find()) {
+            count++;
+        }
+        return count;
     }
 
 }
