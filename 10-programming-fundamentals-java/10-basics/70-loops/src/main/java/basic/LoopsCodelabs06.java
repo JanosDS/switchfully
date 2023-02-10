@@ -10,6 +10,20 @@ public class LoopsCodelabs06 {
      * If both arrays are of a different length return an empty array
      */
     public static int[] merge(int[] array1, int[] array2) {
-       return new int[]{};
+       if(array1.length != array2.length){
+           return new int[0];
+       }
+       int[] array = new int[array1.length + array2.length];
+       int smallIndex = 0;
+       for(int i = 0; i < array.length; i++){
+           if(i%2 == 0){
+               array[i] = array1[smallIndex];
+           }
+           else {
+               array[i] = array2[smallIndex];
+               smallIndex++;
+           }
+       }
+       return array;
     }
 }

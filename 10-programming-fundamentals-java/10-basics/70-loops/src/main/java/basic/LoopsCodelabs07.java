@@ -16,21 +16,47 @@ public class LoopsCodelabs07 {
      * For this method, only use the WHILE-LOOP
      */
     public static String textRepeatWhile(int numberOfTimes, String textToRepeat) {
-        throw new UnsupportedOperationException("Implement me");
+        if(numberOfTimes < 0){
+            return "Impossible text repeat";
+        }
+        String repeatedText = "";
+        while (numberOfTimes > 0){
+            repeatedText += textToRepeat;
+            numberOfTimes--;
+        }
+        return repeatedText;
     }
 
     /**
      * For this method, only use the DO-WHILE-LOOP
      */
     public static String textRepeatDoWhile(int numberOfTimes, String textToRepeat) {
-        throw new UnsupportedOperationException("Implement me");
+        if(numberOfTimes < 0){
+            return "Impossible text repeat";
+        }
+        if(numberOfTimes == 0){
+            return "";
+        }
+        String repeatedText = "";
+        do{
+            repeatedText += textToRepeat;
+            numberOfTimes--;
+        }while(numberOfTimes > 0);
+        return repeatedText;
     }
 
     /**
      * For this method, only use the FOR-LOOP
      */
     public static String textRepeatFor(int numberOfTimes, String textToRepeat) {
-        throw new UnsupportedOperationException("Implement me");
+        if(numberOfTimes < 0){
+            return "Impossible text repeat";
+        }
+        String repeatedText = "";
+        for(int i = 0; i < numberOfTimes; i++){
+            repeatedText += textToRepeat;
+        }
+        return repeatedText;
     }
 
 }

@@ -18,7 +18,9 @@ public class LoopsCodelabs02 {
      * print out 'Ticket' once for every person
      */
     public static void giveTicket(int numberOfPeople) {
-
+        for(int i = 0; i<numberOfPeople; i++){
+            System.out.println("Ticket");
+        }
     }
 
     /**
@@ -26,7 +28,10 @@ public class LoopsCodelabs02 {
      * Print out 'Giving a Coke' for every two people
      */
     public static void giveCoke(int numberOfPeople) {
-
+        for(int i = 0; i<numberOfPeople; i++){
+            if(i%2 == 0)
+            System.out.println("Giving a Coke");
+        }
     }
 
     /**
@@ -34,7 +39,11 @@ public class LoopsCodelabs02 {
      * Print out 'Temperature has been increased by one. The new temperature is now <new_temperature>' until the temperature is 22 degrees.
      */
     public static void increaseTemperature(int currentTemperature) {
-
+        int desiredTemp = 22;
+        while(currentTemperature < desiredTemp){
+            currentTemperature++;
+            System.out.println("Temperature has been increased by one. The new temperature is now " + currentTemperature);
+        }
     }
 
 }

@@ -9,27 +9,18 @@ public class LoopsCodelabs03 {
      * Remove the duplication in this code using loops and methods.
      */
     public static void main(String[] args) {
-        System.out.println("Happy Birthday Sophie!");
-        System.out.println("You're today 10 years old!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
+        singHappyBirthday("Sophie", 10);
+        singHappyBirthday("Jef", 7);
+    }
 
-        System.out.println("Happy Birthday Jef!");
-        System.out.println("You're today 7 years old!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
-        System.out.println("Hip Hip Hooray!");
+    private static void singHappyBirthday(String name, int age){
+        System.out.println("Happy Birthday " + name +"!");
+        System.out.println("You're today " + age +" years old!");
+        hipHipHooray(age);
+    }
+    private static void hipHipHooray(int amount){
+        for(int i = 0; i < amount; i++){
+            System.out.println("Hip Hip Hooray!");
+        }
     }
 }
