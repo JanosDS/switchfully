@@ -19,4 +19,8 @@ public class BigSquare extends BigShape {
         g.setColor(this.getColor());
         g.fillRect(this.getXCoordinate(), this.getYCoordinate(), WIDTH, HEIGHT);
     }
+
+    public int getHeight() {
+        return HEIGHT;
+    }
 }

@@ -17,6 +17,11 @@ public abstract class BigShape {
         this.color = color;
     }
 
+    public BigShape(int xCoordinate, int yCoordinate) {
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+
     abstract void draw(Graphics g);
 
     public int getXCoordinate() {
@@ -29,5 +34,9 @@ public abstract class BigShape {
 
     public Color getColor() {
         return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }

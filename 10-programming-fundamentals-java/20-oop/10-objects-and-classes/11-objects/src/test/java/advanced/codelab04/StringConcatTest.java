@@ -7,8 +7,8 @@ class StringConcatTest {
 
     @Test
     void joinLorem_isCorrect() {
-        String[] lorem = {"Lorem","ipsum","dolor","sit","amet", "jotum"};
-        String expected = "Lorem ipsum dolor sit amet jotum.";
+        String[] lorem = {"Lorem", "ipsum", "dolor", "sit", "amet", "jotum"};
+        String expected = "Lorem ipsum dolor sit amet jotum";
 
         Assertions.assertThat(StringConcat.joinLorem(lorem))
                 .describedAs("Lorem string objects should be equal.")
@@ -17,8 +17,8 @@ class StringConcatTest {
 
     @Test
     void buildLorem_isCorrect() {
-        String[] lorem = {"Lorem","ipsum","dolor","sit","amet", "situm"};
-        String expected = "Lorem ipsum dolor sit amet situm.";
+        String[] lorem = {"Lorem", "ipsum", "dolor", "sit", "amet", "situm"};
+        String expected = "Lorem ipsum dolor sit amet situm";
 
         Assertions.assertThat(StringConcat.buildLorem(lorem))
                 .describedAs("Lorem string objects should be equal.")

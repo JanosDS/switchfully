@@ -1,16 +1,18 @@
 package basic.codelab05;
 
+import java.util.Objects;
+
 /**
  * Override and implement the equals method so that the output - provided by the main method - matches the following:
- *      Should be TRUE: true
- *      Should be TRUE: true
- *      Should be FALSE: false
- *      Should be FALSE: false
- *
+ * Should be TRUE: true
+ * Should be TRUE: true
+ * Should be FALSE: false
+ * Should be FALSE: false
+ * <p>
  * TIP: IntelliJ offers a way to automatically generate an equals method for you...
- *      - Do some Googlin'!
- *      - After generating the method, make sure to inspect it!
- *      - (You will have to make a change to it, so that it also handles case-sensitivity for the currency value)
+ * - Do some Googlin'!
+ * - After generating the method, make sure to inspect it!
+ * - (You will have to make a change to it, so that it also handles case-sensitivity for the currency value)
  */
 public class MoneyCoin {
 
@@ -42,5 +44,16 @@ public class MoneyCoin {
         System.out.println("Should be FALSE: " + moneyCoinA.equals(moneyCoinE));
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MoneyCoin moneyCoin = (MoneyCoin) o;
+        return value == moneyCoin.value && currency.equalsIgnoreCase(moneyCoin.currency);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, currency);
+    }
 }
