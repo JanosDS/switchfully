@@ -54,7 +54,7 @@ public class HouseApplication {
         canvas.addShape(house2);
         canvas.addShape(roof2);
 
-        BigSquare house3 = new BigSquare(window.getWindowDimensions().width, 350, Color.blue);
+        BigSquare house3 = new BigSquare(window.getWindowDimensions().width - 100, 350, Color.blue);
         BigTriangle roof3 = new BigTriangle(house3.getXCoordinate(), house3.getYCoordinate(), Color.blue);
         canvas.addShape(house3);
         canvas.addShape(roof3);
