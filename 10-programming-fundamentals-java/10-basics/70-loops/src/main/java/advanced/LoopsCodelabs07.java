@@ -27,10 +27,9 @@ public class LoopsCodelabs07 {
                 squadCount++;
                 streak = true;
             }
-            if(numbers[i] != numbers[i - 1]){
+            if (numbers[i] != numbers[i - 1]) {
                 streak = false;
             }
-
         }
         return squadCount;
     }

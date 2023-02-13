@@ -19,13 +19,19 @@ public class Cat {
     }
 
     public boolean kill() {
-        if(lifesLeft > 0) {
+        if (lifesLeft > 0) {
             lifesLeft -= 1;
             return true;
-        } return false;
+        }
+        return false;
     }
 
-
+    public boolean hasLivesLeft() {
+        if (lifesLeft > 0) {
+            return true;
+        }
+        return false;
+    }
 
 
 }
