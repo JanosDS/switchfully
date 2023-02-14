@@ -12,10 +12,16 @@ public class Person {
     }
 
     public String getFirstName() {
+        if (firstName == null) {
+            return "";
+        }
         return firstName;
     }
 
     public String getLastName() {
+        if (lastName == null) {
+            return "";
+        }
         return lastName;
     }
 
@@ -41,5 +47,9 @@ public class Person {
 
     public String getCountry() {
         return address.getCountry();
+    }
+
+    public boolean hasAddress() {
+        return address != null;
     }
 }

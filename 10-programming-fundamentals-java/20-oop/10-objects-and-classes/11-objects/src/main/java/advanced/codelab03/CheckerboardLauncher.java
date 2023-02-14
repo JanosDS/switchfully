@@ -24,7 +24,7 @@ public class CheckerboardLauncher {
     public static void main(String[] args) {
         int squareSize = 50;
 
-        BigWindow window = new BigWindow(700, 300);
+        BigWindow window = new BigWindow(400, 400);
         BigCanvas canvas = new BigCanvas();
 
         int x = 0;

@@ -14,7 +14,7 @@ public class Main {
     /**
      * This code is really flaky (easily breaks), because it's not checking for nulls.
      * Can you find the 4 different null checks that are missing?
-     *
+     * <p>
      * Add guard clauses to this code so that it no longer throws NullPointerExceptions.
      */
     public static void main(String[] args) {
@@ -34,9 +34,13 @@ public class Main {
         System.out.println();
         System.out.println("To be printed on enveloppe: ");
         System.out.println(person.getFirstName() + " " + person.getLastName());
-        System.out.println(person.getStreet() + " " + person.getHouseNumber());
-        System.out.println(person.getZipCode() + " " + person.getCity());
-        System.out.println(person.getCountry());
+        if (!person.hasAddress()) {
+            System.out.println("No address provided. Return to sender");
+        } else {
+            System.out.println(person.getStreet() + " " + person.getHouseNumber());
+            System.out.println(person.getZipCode() + " " + person.getCity());
+            System.out.println(person.getCountry());
+        }
         System.out.println();
         System.out.println("To be printed on the letter: ");
         System.out.println(text);
