@@ -30,7 +30,21 @@ public class Time {
         return minute;
     }
 
+    public double getSecond() {
+        return second;
+    }
+
     public static Time highestHour(Time time1, Time time2) {
+        if (time1.getHour() == time2.getHour()) {
+            if (time1.getMinute() == time2.getMinute()) {
+                if (Math.max(time1.getSecond(), time2.getSecond()) == time1.getSecond()) {
+                    return time1;
+                }
+            }
+            if (Math.max(time1.getMinute(), time2.getMinute()) == time1.getMinute()) {
+                return time1;
+            }
+        }
         if (Math.max(time1.getHour(), time2.getHour()) == time1.getHour()) {
             return time1;
         }
