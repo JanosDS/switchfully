@@ -1,9 +1,6 @@
-package basic.codelab03.personel;
+package basic.codelab03.personnel;
 
-import basic.codelab03.villa.Diningroom;
-import basic.codelab03.villa.Garden;
-import basic.codelab03.villa.Kitchen;
-import basic.codelab03.villa.Bathroom;
+import basic.codelab03.villa.*;
 
 public class Staff {
 
@@ -20,7 +17,7 @@ public class Staff {
     }
 
     public void tendToGarden(Garden garden) {
-        gardener.tendTo(garden);
+        butler.tendTo(garden);
     }
 
     public void serveFood(Kitchen kitchen, Diningroom diningroom) {

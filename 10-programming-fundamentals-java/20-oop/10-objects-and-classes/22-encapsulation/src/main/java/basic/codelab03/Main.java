@@ -1,8 +1,7 @@
 package basic.codelab03;
 
-import basic.codelab03.personel.*;
+import basic.codelab03.personnel.*;
 import basic.codelab03.villa.*;
-import org.checkerframework.checker.units.qual.K;
 
 public class Main {
 

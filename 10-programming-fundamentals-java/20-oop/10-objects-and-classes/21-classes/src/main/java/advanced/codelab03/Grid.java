@@ -11,14 +11,15 @@ public class Grid {
     public Grid() {
         fillGrid();
         makeShips();
+        placeShips();
     }
 
     private void makeShips() {
-        ships[0] = new Battleship("Carrier", 5, new int[2]);
-        ships[1] = new Battleship("Battleship", 4, new int[2]);
-        ships[2] = new Battleship("Destroyer", 3, new int[2]);
-        ships[3] = new Battleship("Submarine", 3, new int[2]);
-        ships[4] = new Battleship("Patrol Boat", 2, new int[2]);
+        ships[0] = new Battleship("Carrier", new int[5][]);
+        ships[1] = new Battleship("Battleship", new int[4][]);
+        ships[2] = new Battleship("Destroyer", new int[3][]);
+        ships[3] = new Battleship("Submarine", new int[3][]);
+        ships[4] = new Battleship("Patrol Boat", new int[2][]);
     }
 
     private void fillGrid() {
@@ -28,15 +29,25 @@ public class Grid {
     }
 
     private void placeShips() {
-        for (Battleship ship : ships) {
-            // gen and validate startxy and direction
+        int[] startCoord1 = {0, 0};
+        int[] startCoord2 = {0, 0};
+        int[] startCoord3 = {0, 0};
+        int[] startCoord4 = {0, 0};
+        int[] startCoord5 = {0, 0};
 
-        }
+        ships[0].setCoordinates(startCoord1, true);
+        ships[1].setCoordinates(startCoord2, true);
+        ships[2].setCoordinates(startCoord3, true);
+        ships[3].setCoordinates(startCoord4, true);
+        ships[4].setCoordinates(startCoord5, true);
     }
 
-    public boolean tryHit(int x, int y) {
-
-        grid[x][y] = " X ";
+    public boolean tryHit(int[] coord) {
+        for (Battleship ship : ships) {
+            if (ship.checkHit(coord)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -50,6 +61,7 @@ public class Grid {
             }
             printGrid += "\n";
         }
+        printGrid += "---------------------------";
         return printGrid;
     }
 }

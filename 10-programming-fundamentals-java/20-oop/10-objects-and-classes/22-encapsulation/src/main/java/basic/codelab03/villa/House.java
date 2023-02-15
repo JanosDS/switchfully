@@ -1,6 +1,6 @@
 package basic.codelab03.villa;
 
-import basic.codelab03.personel.Staff;
+import basic.codelab03.personnel.Staff;
 
 public class House {
 

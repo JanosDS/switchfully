@@ -1,4 +1,4 @@
-package basic.codelab03.personel;
+package basic.codelab03.personnel;
 
 import basic.codelab03.villa.Bathroom;
 
