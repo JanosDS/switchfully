@@ -1,8 +1,10 @@
-package basic.codelab03;
+package basic.codelab03.personel;
+
+import basic.codelab03.villa.Bathroom;
 
 public class Plumber {
 
-    public String name;
+    private final String name;
 
     public Plumber(String name) {
         this.name = name;

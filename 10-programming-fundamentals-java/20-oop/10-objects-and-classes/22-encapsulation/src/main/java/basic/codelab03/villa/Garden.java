@@ -1,4 +1,4 @@
-package basic.codelab03;
+package basic.codelab03.villa;
 
 public class Garden {
 

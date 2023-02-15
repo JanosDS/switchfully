@@ -1,8 +1,11 @@
-package basic.codelab03;
+package basic.codelab03.personel;
+
+import basic.codelab03.food.Food;
+import basic.codelab03.villa.Kitchen;
 
 public class Cook {
 
-    public String name;
+    private final String name;
 
     public Cook(String name) {
         this.name = name;

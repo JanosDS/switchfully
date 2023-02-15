@@ -1,15 +1,19 @@
-package basic.codelab03;
+package basic.codelab03.personel;
+
+import basic.codelab03.food.Food;
+import basic.codelab03.villa.Diningroom;
+import basic.codelab03.villa.Garden;
 
 public class Butler {
 
-    public String name;
+    private final String name;
 
     public Butler(String name) {
         this.name = name;
     }
 
     public void serveFood(Food food, Diningroom diningroom) {
-        System.out.println("Butler " + name + " is serving " + food.name + " in the dining room");
+        System.out.println("Butler " + name + " is serving " + food.getName() + " in the dining room");
         diningroom.serveFood(food);
     }
 

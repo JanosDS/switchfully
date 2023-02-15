@@ -1,5 +1,15 @@
 package basic.codelab01;
 
+import basic.codelab01.animal.Animal;
+import basic.codelab01.animal.AnimalRepository;
+import basic.codelab01.animal.AnimalService;
+import basic.codelab01.car.Car;
+import basic.codelab01.car.CarRepository;
+import basic.codelab01.car.CarService;
+import basic.codelab01.sport.Sport;
+import basic.codelab01.sport.SportRepository;
+import basic.codelab01.sport.SportService;
+
 public class Main {
 
     private final static AnimalService animalService = new AnimalService(new AnimalRepository());
@@ -7,12 +17,10 @@ public class Main {
     private final static SportService sportService = new SportService(new SportRepository());
 
     /**
-     *
      * Create packages for the classes in this code lab.
      * Put classes that are closely related together in the same package.
-     *
+     * <p>
      * A good rule to follow is to limit your packages to a max of 7 classes per package.
-     *
      */
     public static void main(String[] args) {
         Animal animal = animalService.getAnimalByName("Felix");

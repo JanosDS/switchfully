@@ -1,4 +1,4 @@
-package basic.codelab01;
+package basic.codelab01.car;
 
 public class CarRepository {
 
@@ -10,8 +10,8 @@ public class CarRepository {
 
 
     public Car getCarByType(String type) {
-        for(Car car: cars) {
-            if(car.getType().equals(type)) {
+        for (Car car : cars) {
+            if (car.getType().equals(type)) {
                 return car;
             }
         }

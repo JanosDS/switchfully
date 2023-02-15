@@ -1,4 +1,4 @@
-package basic.codelab01;
+package basic.codelab01.car;
 
 public class CarService {
 

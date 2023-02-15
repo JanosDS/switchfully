@@ -39,26 +39,26 @@ class MainTest {
         Main.main(null);
         Assertions.assertThat(outContent.toString()).isEqualToNormalizingNewlines(
                 """
-                Gardener Patrick will tend to the garden
-                Garden: Weeds are removed
-                Garden: Hedges are trimmed
-                Garden: Grass is mowed
-                ********************
-                Cook Hendrick is preparing some tasty chicken
-                Kitchen: preparing Tasty chicken
-                Butler Sofia is serving Tasty chicken in the dining room
-                Dining room: Tasty chicken is being served!
-                ********************
-                Plumber Alexia is fixing the bathroom
-                Bathroom: Leak is being fixed
-                """
+                        Gardener Patrick will tend to the garden
+                        Garden: Weeds are removed
+                        Garden: Hedges are trimmed
+                        Garden: Grass is mowed
+                        ********************
+                        Cook Hendrick is preparing some tasty chicken
+                        Kitchen: preparing Tasty chicken
+                        Butler Sofia is serving Tasty chicken in the dining room
+                        Dining room: Tasty chicken is being served!
+                        ********************
+                        Plumber Alexia is fixing the bathroom
+                        Bathroom: Leak is being fixed
+                        """
         );
     }
 
 
     @Test
     void checkAllFieldsPrivateFinal() throws IOException {
-        Assertions.assertThat(ClassPath.from(MainTest.class.getClassLoader()).getTopLevelClassesRecursive("basic.codelab02"))
+        Assertions.assertThat(ClassPath.from(MainTest.class.getClassLoader()).getTopLevelClassesRecursive("basic.codelab03"))
                 .extracting(classInfo -> classInfo.load())
                 .flatExtracting(clazz -> Arrays.stream(clazz.getDeclaredFields()).map(field -> tuple(clazz.getSimpleName(), field)).collect(toList()))
                 .extracting(tuple -> {
