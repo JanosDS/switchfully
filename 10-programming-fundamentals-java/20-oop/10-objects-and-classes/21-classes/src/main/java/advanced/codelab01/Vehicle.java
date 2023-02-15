@@ -23,6 +23,22 @@ public class Vehicle {
         return new Vehicle("Bike", passengers, wheels, null, null);
     }
 
+    public static Vehicle createPlane(Integer passengers, Integer wheels, String motor, Integer maxHeight) {
+        return new Vehicle("Airplane", passengers, wheels, motor, maxHeight);
+    }
+
+    public static Vehicle createBalloon(int passengers, Integer maxHeight) {
+        return new Vehicle("Balloon", passengers, null, null, maxHeight);
+    }
+
+    public static Vehicle createBoat(int passengers, String motor) {
+        return new Vehicle("Boat", passengers, null, motor, null);
+    }
+
+    public static Vehicle createVehicle(String type, int passengers, Integer wheels, String motor) {
+        return new Vehicle(type, passengers, wheels, motor, null);
+    }
+
     /**
      * When working with static method factories it is a good practice to only have one private constructor.
      */
@@ -32,35 +48,6 @@ public class Vehicle {
         this.wheels = wheels;
         this.motor = motor;
         this.maxHeight = maxHeight;
-    }
-
-    public Vehicle(String type, int passengers, Integer wheels, String motor) {
-        this.type = type;
-        this.passengers = passengers;
-        this.wheels = wheels;
-        this.motor = motor;
-    }
-
-    public Vehicle(int passengers, Integer maxHeight, String type) {
-        /*
-         * The 'this' keyword will allow you to call a constructor in a constructor.
-         * This might be confusing so don't over use it.
-         */
-        this(type, passengers, null, null, maxHeight);
-    }
-
-    public Vehicle(Integer passengers, Integer wheels, String motor, Integer maxHeight) {
-        this.type = "Airplane";
-        this.passengers = passengers;
-        this.wheels = wheels;
-        this.motor = motor;
-        this.maxHeight = maxHeight;
-    }
-
-    public Vehicle(int passengers, String motor) {
-        this.type = "Boat";
-        this.passengers = passengers;
-        this.motor = motor;
     }
 
     @Override

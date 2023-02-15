@@ -1,5 +1,7 @@
 package advanced.codelab02;
 
+import java.util.Objects;
+
 public class CustomTime {
 
     public static final CustomTime MIDNIGHT = new CustomTime(0, 0, 0);
@@ -28,29 +30,32 @@ public class CustomTime {
                 this.hour, this.minute, this.second);
     }
 
-    /**
-     * This is not the real equals method. It does not take in a parameter of type Object...
-     * It is not correctly overriding the equals method of Object.
-     * @param that the CustomTime object to check equality with.
-     * @return boolean to indicate whether that is equal to this.
-     */
-    public boolean equals(CustomTime that) {
-        return this.hour == that.hour
-                && this.minute == that.minute
-                && this.second == that.second;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CustomTime that = (CustomTime) o;
+        return hour == that.hour && minute == that.minute && Double.compare(that.second, second) == 0;
     }
 
-    public void add(CustomTime other) {
+    @Override
+    public int hashCode() {
+        return Objects.hash(hour, minute, second);
+    }
+
+    public CustomTime add(CustomTime other) {
         double secondSum = this.second + other.second;
         int addMinutes = (int) secondSum / 60;
-        this.second = secondSum % 60;
+        double second = secondSum % 60;
 
         int minuteSum = this.minute + other.minute + addMinutes;
         int addHours = minuteSum / 60;
-        this.minute = minuteSum % 60;
+        int minute = minuteSum % 60;
 
         int hourSum = this.hour + other.hour + addHours;
-        this.hour = hourSum % 24;
+        int hour = hourSum % 24;
+        CustomTime newTime = new CustomTime(hour, minute, second);
+        return newTime;
     }
 
 

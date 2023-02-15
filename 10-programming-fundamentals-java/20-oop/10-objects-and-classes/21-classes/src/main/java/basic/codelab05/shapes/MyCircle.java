@@ -3,7 +3,6 @@ package basic.codelab05.shapes;
 import java.lang.Math;
 
 public class MyCircle {
-
     public static final double DEFAULT_RADIUS = 1.0;
     public static final String DEFAULT_COLOR = "blue";
     private double radius;
