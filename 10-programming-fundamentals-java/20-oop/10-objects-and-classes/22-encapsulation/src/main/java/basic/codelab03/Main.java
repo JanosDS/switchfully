@@ -27,6 +27,9 @@ public class Main {
      * What would be the benefit in writing your codebase without any getters or setters?
      * <p>
      * After this change how hard is it make the gardener once again responsible for the garden?
+     * <p>
+     * This would be quite easy to solve using subclasses, where the staff class contains all the tasks that need to be done (methods)
+     * And the staff members can utilise these
      */
     public static void main(String[] args) {
         House house = new House(
