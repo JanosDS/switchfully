@@ -1,4 +1,4 @@
-package basic.solutions.codelab02;
+package basic.codelab02;
 
 public class MyRectangle {
 
