@@ -1,43 +1,42 @@
-package basic.codelab02;
+package basic.solutions.codelab02;
 
 public class MyRectangle {
-    public static int instanceCount = 0;
-    private String label;
-    private int width;
-    private int height;
+
+    private static final int DEFAULT_X_COORDINATE = 5;
+    private static final int DEFAULT_Y_COORDINATE = 10;
+    private static final int DEFAULT_WIDTH = 50;
+    private static final int DEFAULT_HEIGHT = 100;
+
+    private static int instanceCount = 0;
+
     private int xCoordinate;
     private int yCoordinate;
+    private int width;
+    private int height;
+    private String label;
 
-    public MyRectangle() {
-        this(50, 100);
-    }
-
-    public MyRectangle(int width, int height) {
-        this(5, 10, width, height);
-    }
-
-    public MyRectangle(int xCoord, int yCoord, int width, int height) {
+    public MyRectangle(int xCoordinate, int yCoordinate, int width, int height) {
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
         this.width = width;
         this.height = height;
-        this.xCoordinate = xCoord;
-        this.yCoordinate = yCoord;
         instanceCount++;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public MyRectangle() {
+        this(DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
-    public String getLabel() {
-        return label;
+    public static MyRectangle createByCoordinate(int xCoordinate, int yCoordinate) {
+        return new MyRectangle(xCoordinate, yCoordinate, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
-    public int getWidth() {
-        return width;
+    public static MyRectangle createByDimension(int width, int height) {
+        return new MyRectangle(DEFAULT_X_COORDINATE, DEFAULT_Y_COORDINATE, width, height);
     }
 
-    public int getHeight() {
-        return height;
+    public static MyRectangle copy(MyRectangle base) {
+        return new MyRectangle(base.getXCoordinate(), base.getYCoordinate(), base.getWidth(), base.getHeight());
     }
 
     public int getXCoordinate() {
@@ -46,6 +45,14 @@ public class MyRectangle {
 
     public int getYCoordinate() {
         return yCoordinate;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public void setDimensions(int width, int height) {
@@ -57,8 +64,11 @@ public class MyRectangle {
         return width * height;
     }
 
-    public static MyRectangle duplicate(MyRectangle rectangle) {
-        MyRectangle newRectangle = new MyRectangle(rectangle.getWidth(), rectangle.getHeight(), rectangle.getXCoordinate(), rectangle.getYCoordinate());
-        return newRectangle;
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 }
