@@ -47,9 +47,7 @@ public class CarTest {
         onClass(CLASS_NAME)
                 .callConstructor("1-AAA-111", "Golf vw", Color.black)
                 .callMethod("turnOnEngine")
-                .expectToBePrinted("""
-                        Vroom vroom
-                        """);
+                .expectToBePrinted("Vroom vroom");
     }
 
     @Test
