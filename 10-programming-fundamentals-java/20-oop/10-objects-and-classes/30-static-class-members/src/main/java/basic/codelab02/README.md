@@ -15,6 +15,7 @@ I should be able to create a MyRectangle object by providing a width and height
 
 ## Requirement 4
 I should be able to create a MyRectangle object by providing the coordinates and dimensions
+The order of the parameters should be xCoordinate, yCoordinate, width, height
 
 ## Requirement 5
 Make sure no-one can directly access the instance variables outside of your MyRectangle class
