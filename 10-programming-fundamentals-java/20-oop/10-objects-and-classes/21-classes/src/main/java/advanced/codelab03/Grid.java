@@ -2,6 +2,7 @@ package advanced.codelab03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Grid {
     private final int ROWS = 10;
@@ -30,18 +31,45 @@ public class Grid {
         }
     }
 
-    private void placeShips() {
-        int[] startCoord1 = {0, 0};
-        int[] startCoord2 = {2, 0};
-        int[] startCoord3 = {4, 0};
-        int[] startCoord4 = {6, 0};
-        int[] startCoord5 = {9, 0};
+    private boolean canPlaceShip(Battleship ship, int[] startCoord, boolean horizontal) {
+        int[] coord = startCoord;
+        for (int i = 0; i < ship.getSize(); i++) {
+            int[] coordx_plus1 = {coord[0] + 1, coord[1]};
+            int[] coordx_min1 = {coord[0] - 1, coord[1]};
+            int[] coordy_plus1 = {coord[0], coord[1] + 1};
+            int[] coordy_min1 = {coord[0], coord[1] - 1};
+            for (Battleship ship2 : ships) {
+                if (ship2.checkHit(coord) || ship2.checkHit(coordx_min1) || ship2.checkHit(coordx_plus1) || ship2.checkHit(coordy_min1) || ship2.checkHit(coordy_plus1)) {
+                    System.out.println("Ship overlaps -> retry");
+                    return false;
+                }
+                if (coord[0] > 9 || coord[1] > 9) {
+                    System.out.println("Ship leaves field -> retry");
+                    return false;
+                }
+            }
+            if (!horizontal) {
+                coord[0] += 1;
+            } else {
+                coord[1] += 1;
+            }
+        }
+        return true;
+    }
 
-        ships.get(0).setCoordinates(startCoord1, true);
-        ships.get(1).setCoordinates(startCoord2, true);
-        ships.get(2).setCoordinates(startCoord3, true);
-        ships.get(3).setCoordinates(startCoord4, true);
-        ships.get(4).setCoordinates(startCoord5, true);
+    private void placeShips() {
+        Random r = new Random();
+
+        for (Battleship ship : ships) {
+            int[] xy = {r.nextInt(10), r.nextInt(10)};
+            boolean horizontal = (r.nextInt(10) < 5);
+            while (!canPlaceShip(ship, xy, horizontal)) {
+                xy[0] = r.nextInt(10);
+                xy[1] = r.nextInt(10);
+                horizontal = (r.nextInt(10) < 5);
+            }
+            ship.setCoordinates(xy, horizontal);
+        }
     }
 
     public boolean markGrid(int[] coord) {

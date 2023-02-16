@@ -27,6 +27,10 @@ public class Battleship {
         return lives;
     }
 
+    public int getSize() {
+        return cells.size();
+    }
+
     public void setCoordinates(int[] startCoord, boolean horizontal) {
         int[] coord = startCoord;
         for (int i = 0; i < cells.size(); i++) {
