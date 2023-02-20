@@ -3,9 +3,10 @@ package basic.codelab01;
 /**
  * Read the README.md file.
  */
-public class Computer {
+public class Computer implements SoundPanel {
 
-    String makeSound() {
+    
+    public String makeSound() {
         return "Bleep Bloop Bleep!";
     }
 

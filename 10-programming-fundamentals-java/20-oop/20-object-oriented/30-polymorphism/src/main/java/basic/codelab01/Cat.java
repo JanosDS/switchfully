@@ -3,9 +3,10 @@ package basic.codelab01;
 /**
  * Read the README.md file.
  */
-public class Cat {
+public class Cat implements SoundPanel {
 
-    String makeSound() {
+
+    public String makeSound() {
         return "Miauw!";
     }
 

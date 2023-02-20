@@ -1,5 +1,6 @@
 package basic.codelab01;
 
+import java.util.ArrayList;
 import java.util.StringJoiner;
 
 /**
@@ -7,47 +8,37 @@ import java.util.StringJoiner;
  */
 public class SoundService {
 
+    private static ArrayList<SoundPanel> soundPanels = new ArrayList<>();
+
     public static void main(String[] args) {
         Baby[] babies = {new Baby(), new Baby()};
         Computer[] computers = {new Computer()};
         Dog[] dogs = {new Dog(), new Dog(), new Dog()};
         Cat[] cats = {new Cat()};
-        System.out.println(allMakeSound(babies));
-        System.out.println(allMakeSound(computers));
-        System.out.println(allMakeSound(dogs));
-        System.out.println(allMakeSound(cats));
-    }
+        Piano[] pianos = {new Piano(), new Piano()};
 
-    static String allMakeSound(Baby[] babies) {
-        StringJoiner joiner = new StringJoiner("\n");
-        for(Baby baby : babies) {
-            joiner.add(baby.makeSound());
+        addToPanel(babies);
+        addToPanel(computers);
+        addToPanel(dogs);
+        addToPanel(cats);
+        addToPanel(pianos);
+        for (SoundPanel panel : soundPanels) {
+            System.out.println(panel.makeSound());
         }
-        return joiner.toString();
+
     }
 
-    static String allMakeSound(Computer[] computers) {
-        StringJoiner joiner = new StringJoiner("\n");
-        for(Computer computer : computers) {
-            joiner.add(computer.makeSound());
+    public static void addToPanel(SoundPanel[] toAdd) {
+        for (SoundPanel panel : toAdd) {
+            soundPanels.add(panel);
         }
-        return joiner.toString();
     }
 
-    static String allMakeSound(Dog[] dogs) {
-        StringJoiner joiner = new StringJoiner("\n");
-        for(Dog dog : dogs) {
-            joiner.add(dog.makeSound());
+    public static String allMakeSound(SoundPanel[] panels) {
+        String str = "";
+        for (SoundPanel panel : panels) {
+            str += panel.makeSound();
         }
-        return joiner.toString();
+        return str;
     }
-
-    static String allMakeSound(Cat[] cats) {
-        StringJoiner joiner = new StringJoiner("\n");
-        for(Cat cat : cats) {
-            joiner.add(cat.makeSound());
-        }
-        return joiner.toString();
-    }
-
 }
