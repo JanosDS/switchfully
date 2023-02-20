@@ -18,7 +18,8 @@ public class BankRunner {
         double balance = scan.nextDouble();
 
         // continue here
-
+        AccountOwner newOwner = new AccountOwner(firstName, lastName);
+        Account account = new Account(balance, newOwner);
 
     }
 
