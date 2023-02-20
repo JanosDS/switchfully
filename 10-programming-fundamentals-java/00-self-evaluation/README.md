@@ -227,15 +227,15 @@ Some examples (size = 5), printed to the console
     - A negative amount of elements will return 0
     - Run the tests (before and after having implemented your solution
         - Test scenario's:
-          - amountOfItems == 1, then price == 5
-          - amountOfItems == 0, then price == 0
-          - amountOfItems == 9, then price == 45
-          - amountOfItems == 10, then price == 50
-          - amountOfItems == 11, then price == 54
-          - amountOfItems == 15, then price == 70
-          - amountOfItems == 16, then price == 73
-          - amountOfItems == 20, then price == 85
-          - amountOfItems == -1, then price == 0
+            - amountOfItems == 1, then price == 5
+            - amountOfItems == 0, then price == 0
+            - amountOfItems == 9, then price == 45
+            - amountOfItems == 10, then price == 50
+            - amountOfItems == 11, then price == 54
+            - amountOfItems == 15, then price == 70
+            - amountOfItems == 16, then price == 73
+            - amountOfItems == 20, then price == 85
+            - amountOfItems == -1, then price == 0
 3. [:heavy_check_mark:] Create a method that returns the following:
     - When the input is 1: "It's something"
     - When the input is 2: "That's more like it"
@@ -277,13 +277,13 @@ But we will not include them in our solution!
 
 ### Codelab 07
 
-- [:x:] Write a `Dog`, `Labrador` and `Chihuahua` class.
-- [:x:] All dogs have a name and can bark
+- [:heavy_check_mark:] Write a `Dog`, `Labrador` and `Chihuahua` class.
+- [:heavy_check_mark:] All dogs have a name and can bark
     - The actual barking sound is specific to the breed of dog.
         - A labrador has as its barking sound value "WOOF WOOF!"
         - A chihuahua has as its barking sound value "Kefkefkef!"
     - The name is specific to the actual instance of a dog.
-- [:x:] All dogs also have an average breed weight
+- [:heavy_check_mark:] All dogs also have an average breed weight
     - The actual value for the average breed weight is specific to the breed of dog.
         - A labrador has as its average breed weight, value 35 (Kg).
         - A chihuahua has as its average breed weight, value 2 (Kg).
@@ -291,11 +291,12 @@ But we will not include them in our solution!
     - We should be able to **get** the average breed weight for every dog
     - (It should not be possible to create instances of `Dog` itself)
 
-- [:x:] Chihuahuas also have a color field, it can be either Brown, Black or White.
-- [:x:] Override the `toString` method, it should contain the entire state of every dog.
+- [:heavy_check_mark:] Chihuahuas also have a color field, it can be either Brown, Black or White.
+- [:heavy_check_mark:] Override the `toString` method, it should contain the entire state of every dog.
     - For a labrador: "Labrador: (name = Labby, sound = WOOF WOOF!, average breed weight = 35)"
     - For a chihuahua: "Chihuahua: (name = Darling, sound = Kefkefkef!!, average breed weight = 2, color = Brown)"
-- [:x:] Override the `equals` method: two dogs are equal if they have the same name and make the same sound.
+- [:heavy_check_mark:] Override the `equals` method: two dogs are equal if they have the same name and make the same
+  sound.
 
 ### Codelab 08
 
