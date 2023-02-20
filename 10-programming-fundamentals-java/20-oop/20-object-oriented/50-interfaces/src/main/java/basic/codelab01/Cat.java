@@ -3,10 +3,10 @@ package basic.codelab01;
 /**
  * Read the README.md file.
  */
-public class Cat {
+public class Cat implements Soundable {
 
-    String makeSound() {
-        return "Miauw!";
-    }
+	public String makeSound() {
+		return "Miauw!";
+	}
 
 }

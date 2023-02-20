@@ -1,19 +1,30 @@
 package basic.codelab02.elements;
 
-public class Button {
+import basic.codelab02.Clickable;
 
-    private final String label;
+public class Button implements Clickable {
 
-    public Button(String label) {
-        this.label = label;
-    }
+	private final String label;
 
-    public String getLabel() {
-        return label;
-    }
+	public Button(String label) {
+		this.label = label;
+	}
 
-    public Button changeLabel(String label) {
-        return new Button(label);
-    }
+	public String getLabel() {
+		return label;
+	}
 
+	public Button changeLabel(String label) {
+		return new Button(label);
+	}
+
+	@Override
+	public String click() {
+		return "oh ohw you clicked me";
+	}
+
+	@Override
+	public String doubleClick() {
+		return click().repeat(2);
+	}
 }

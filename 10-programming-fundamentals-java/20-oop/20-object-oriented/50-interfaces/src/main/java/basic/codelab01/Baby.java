@@ -3,10 +3,10 @@ package basic.codelab01;
 /**
  * Read the README.md file.
  */
-public class Baby {
+public class Baby implements Soundable {
 
-    String makeSound() {
-        return "Wheeeeeiiiii!";
-    }
+	public String makeSound() {
+		return "Wheeeeeiiiii!";
+	}
 
 }

@@ -1,23 +1,25 @@
 package basic.codelab03.animal;
 
-public class Horse extends Animal {
-    private final double speed;
+import basic.codelab03.Rideable;
 
-    public Horse(String name, double speed) {
-        super(name);
-        this.speed = speed;
-    }
+public class Horse extends Animal implements Rideable {
+	private final double speed;
 
-    public double getSpeed() {
-        return speed;
-    }
+	public Horse(String name, double speed) {
+		super(name);
+		this.speed = speed;
+	}
 
-    public double timeToReach(int distance) {
-        int restingTime = distance / 20;
-        return distance / speed + restingTime;
-    }
+	public double getSpeed() {
+		return speed;
+	}
 
-    public void makeSound() {
-        System.out.println("Hayo, " + getName() + "!");
-    }
+	public double timeToReach(int distance) {
+		int restingTime = distance / 20;
+		return distance / speed + restingTime;
+	}
+
+	public void makeSound() {
+		System.out.println("Hayo, " + getName() + "!");
+	}
 }

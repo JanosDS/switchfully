@@ -3,10 +3,10 @@ package basic.codelab01;
 /**
  * Read the README.md file.
  */
-public class Computer {
+public class Computer implements Soundable {
 
-    String makeSound() {
-        return "Bleep Bloop Bleep!";
-    }
+	public String makeSound() {
+		return "Bleep Bloop Bleep!";
+	}
 
 }
