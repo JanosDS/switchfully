@@ -300,7 +300,8 @@ But we will not include them in our solution!
 
 ### Codelab 08
 
-- [:x:] All birds have a beak size, it can be small, medium or large. Furthermore, it should be possible to **get** this
+- [:heavy_check_mark:] All birds have a beak size, it can be small, medium or large. Furthermore, it should be possible
+  to **get** this
   beak size.
     - Eagle is a specific type of bird, an eagle has a large beak size.
     - Pigeon is a specific type of bird, a pigeon has a medium beak size.
@@ -308,12 +309,13 @@ But we will not include them in our solution!
     - (any future new specific types of bird will also have a beak size)
     - (creating an instance of a (non-specific) bird should not be possible)
 
-- [:x:] Most birds can **fly**, but not all! Eagle and Pigeon can fly, a Dodo can not.
+- [:heavy_check_mark:] Most birds can **fly**, but not all! Eagle and Pigeon can fly, a Dodo can not.
     - When we let an eagle fly, it should return textual value "I'm soaring through the sky!"
     - When we let a pigeon fly, it should return textual value "Flap flap... oeh, look, breadcrumbs!"
     - It should be impossible to let a dodo fly (they're fly-less birds!)
 
-- [:x:] For all the specific birds that can fly (eagle and pigeon), we should also be able to get the maximum altitude
+- [:heavy_check_mark:] For all the specific birds that can fly (eagle and pigeon), we should also be able to get the
+  maximum altitude
   it can fly.
     - The maximum altitude is specific to a single instance (so 2 eagle birds can have a different maximum altitude).
       However,
@@ -322,7 +324,7 @@ But we will not include them in our solution!
         - Pigeons should have a maximum altitude between 500 and 750 meters (both including).
         - Dodo's do not have the concept of a maximum altitude (as they don't fly...)
 
-- [:x:] Finally, create a `Sky` class. It should have a class - not instance - method
+- [:heavy_check_mark:] Finally, create a `Sky` class. It should have a class - not instance - method
   that accepts (as an argument) an array of birds that can fly (only!).
     - Let this method loop over the array and let it call, each bird's fly method.
     - Each time, print the value returned by the fly method to the console.
