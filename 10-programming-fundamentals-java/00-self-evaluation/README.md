@@ -112,31 +112,66 @@ Please do this after each finished codelab. It will help us in keeping track of 
     - Nothing gets returned
 6. [:heavy_check_mark:] **What's an object? What's a class?**
     - An object is an instance of a class
-7. [:x:] **What's state? What's behavior?**
-8. [:x:] **What is an instance?**
-9. [:x:] **How do we create an object from a class?**
-10. [:x:] **What is the value `null`? What types can hold `null`?**
-11. [:x:] **What is an object reference?**
-12. [:x:] **What is data encapsulation? What role do the access modifiers play in it? Provide all access modifiers.**
-13. [:x:] **What is a constructor?**
-14. [:x:] **What is the default constructor?**
-15. [:x:] **What is a package? Why do we use them?**
-16. [:x:] **What is an enum and when should you use one?**
-17. [:x:] **What's the difference between a static method and an instance method?**
-18. [:x:] **What is a constant?**
-19. [:x:] **What is inheritance? Why is it useful? Give an example.**
-20. [:x:] **What is composition? Why is it useful? Give an example.**
-21. [:x:] **What is polymorphism? Why is it useful? Give an example.**
-22. [:x:] **What is meant with the sentence 'Class A extends / inherits from Class B'?**
-23. [:x:] **What is the difference between a (parent) class and an (abstract) parent class?**
-24. [:x:] **What's the difference between an abstract class and an interface?**
-25. [:x:] **What is meant with the sentence 'Class A implements (interface) A'?**
-26. [:x:] **How does an object gets 'destroyed' and thrown out of the memory?**
-27. [:x:] **What is the `Object` class?**
-28. [:x:] **To invert the value of a boolean, which operator would you use?**
-29. [:x:] **What is casting? explain widening/upcast and narrowing/downcast.**
-30. [:x:] **What does the `final` keyword do?**
-31. [:x:] **What is the difference between `==` and `equals`?**
+7. [:heavy_check_mark:] **What's state? What's behavior?**
+    - State: data/values
+    - Behavior: methods/functions
+8. [:heavy_check_mark:] **What is an instance?**
+    - An object of a class
+9. [:heavy_check_mark:] **How do we create an object from a class?**
+    - Classname objectName = new Classname(constructor params)
+10. [:heavy_check_mark:] **What is the value `null`? What types can hold `null`?**
+    - All referencetypes can be null
+    - Null => there is no reference
+11. [:heavy_check_mark:] **What is an object reference?**
+    - Reference to an object (of a class)
+12. [:heavy_check_mark:] **What is data encapsulation? What role do the access modifiers play in it? Provide all access
+    modifiers.**
+    - Keeping instance variables as private/enclosed as possible
+    - Private: only accesible by this object, Protected: Accesable by package, Public: everything can access
+13. [:heavy_check_mark:] **What is a constructor?**
+    - A method to create a new Object instance of a class
+14. [:heavy_check_mark:] **What is the default constructor?**
+    - Empty -> no parameters req
+15. [:heavy_check_mark:] **What is a package? Why do we use them?**
+    - Organizing classes that belong together
+16. [:heavy_check_mark:] **What is an enum and when should you use one?**
+    - a way to limit the possible values of a variable
+17. [:heavy_check_mark:] **What's the difference between a static method and an instance method?**
+    - Static method is always available (in that class), instance method can only be used when an object is created
+18. [:heavy_check_mark:] **What is a constant?**
+    - static final -> value can not be changed and
+19. [:heavy_check_mark:] **What is inheritance? Why is it useful? Give an example.**
+    - Child class inherits methods/variables from parrentclass -> Parentclass Bird has a lot of childclasses that can
+      inherit a lot of the same variables and methods -> avoid duplication
+20. [:heavy_check_mark:] **What is composition? Why is it useful? Give an example.**
+    - Splitting one class into multiple classes (components)
+    - readability, maintainability, using diff component classes in different situations
+21. [:heavy_check_mark:] **What is polymorphism? Why is it useful? Give an example.**
+    - Changing the
+22. [:heavy_check_mark:] **What is meant with the sentence 'Class A extends / inherits from Class B'?**
+    - Class A utilises/implements the methods defined in Class B
+23. [:heavy_check_mark:] **What is the difference between a (parent) class and an (abstract) parent class?**
+    - Abstract class can not be instantialised
+24. [:heavy_check_mark:] **What's the difference between an abstract class and an interface?**
+    - Interfaces can not have states
+25. [:heavy_check_mark:] **What is meant with the sentence 'Class A implements (interface) B'?**
+    - Class A implements the methods defined in interface B
+26. [:heavy_check_mark:] **How does an object gets 'destroyed' and thrown out of the memory?**
+    - When object is no longer beeing used -> remove pointer and deallocates memory it occupies (the memory gets
+      overwritten)
+27. [:heavy_check_mark:] **What is the `Object` class?**
+    - Parent class of all other classes
+28. [:heavy_check_mark:] **To invert the value of a boolean, which operator would you use?**
+    - !boolean
+29. [:heavy_check_mark:] **What is casting? explain widening/upcast and narrowing/downcast.**
+    - Casting = changing of type
+    - Upcasting = casting a ref typ to a parent ref type
+    - Downcasting = casting to a child class
+30. [:heavy_check_mark:] **What does the `final` keyword do?**
+    - after value is set, it can not be changed while the program is running
+31. [:heavy_check_mark:] **What is the difference between `==` and `equals`?**
+    - == : checks if the "object" is the same
+    - equals: can be difined to check certain values, and conclude if the objects are the same if the values are
 
 ## Hands-on
 
