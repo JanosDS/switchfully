@@ -1,19 +1,23 @@
-package codelab06;
+package codelab06.card;
 
 import java.util.Objects;
 
 public class Card {
 	private Suit suit;
-	private int value;
+	private Value value;
 
-	public Card(Suit suit, int value) {
+	public Card(Suit suit, Value value) {
 		this.suit = suit;
 		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return suit.getShortVal() + value;
+		return suit.getShortVal() + value.getValue();
+	}
+
+	public String toLongString() {
+		return value.getName() + " of " + suit.getValue();
 	}
 
 	@Override

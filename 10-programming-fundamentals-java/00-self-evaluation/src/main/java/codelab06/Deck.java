@@ -1,5 +1,9 @@
 package codelab06;
 
+import codelab06.card.Card;
+import codelab06.card.Suit;
+import codelab06.card.Value;
+
 import java.util.ArrayList;
 
 public class Deck {
@@ -7,7 +11,7 @@ public class Deck {
 	ArrayList<Card> cards = new ArrayList<>();
 
 	public Deck() {
-		this.cards.add(new Card(Suit.HEARTS, 1));
+		this.cards.add(new Card(Suit.HEARTS, Value.ACE));
 	}
 
 	public Deck(ArrayList<Card> cards) {
@@ -19,6 +23,21 @@ public class Deck {
 			return true;
 		}
 		return false;
+	}
+
+	public int getAmountOfCards() {
+		return cards.size();
+	}
+
+	public void fillDeck() {
+		for (Suit suit : Suit.values()) {
+			for (Value value : Value.values()) {
+				Card newCard = new Card(suit, value);
+				if (!contains(newCard)) {
+					cards.add(newCard);
+				}
+			}
+		}
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package codelab06;
+package codelab06.card;
 
 public enum Suit {
 	SPADES("Spades", "S", "Black"),
