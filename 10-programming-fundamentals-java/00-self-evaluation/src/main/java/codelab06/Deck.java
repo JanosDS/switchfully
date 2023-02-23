@@ -19,10 +19,7 @@ public class Deck {
 	}
 
 	public boolean contains(Card card) {
-		if (cards.contains(card)) {
-			return true;
-		}
-		return false;
+		return cards.contains(card);
 	}
 
 	public int getAmountOfCards() {
@@ -32,11 +29,15 @@ public class Deck {
 	public void fillDeck() {
 		for (Suit suit : Suit.values()) {
 			for (Value value : Value.values()) {
-				Card newCard = new Card(suit, value);
-				if (!contains(newCard)) {
-					cards.add(newCard);
-				}
+				addCard(suit, value);
 			}
+		}
+	}
+
+	public void addCard(Suit suit, Value value) {
+		Card newCard = new Card(suit, value);
+		if (!contains(newCard)) {
+			cards.add(newCard);
 		}
 	}
 

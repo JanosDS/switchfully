@@ -1,4 +1,6 @@
-package codelab08;
+package codelab08.bird;
+
+import codelab08.bird.behavior.Flyable;
 
 public class Eagle extends Bird implements Flyable {
 	private static final int MAX_FLY_HEIGHT = 5000;

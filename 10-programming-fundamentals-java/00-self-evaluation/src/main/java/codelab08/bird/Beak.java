@@ -1,4 +1,4 @@
-package codelab08;
+package codelab08.bird;
 
 public enum Beak {
 	SMALL("Small"),

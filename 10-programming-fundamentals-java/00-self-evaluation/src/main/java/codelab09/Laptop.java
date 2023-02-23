@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Laptop {
 
-	private final int MAX_PERIPERALS = 5;
+	private static final int MAX_PERIPERALS = 5;
 
 	private Processor processor;
 	private Screen screen;

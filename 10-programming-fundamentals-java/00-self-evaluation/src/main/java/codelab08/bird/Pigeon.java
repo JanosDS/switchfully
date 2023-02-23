@@ -1,4 +1,6 @@
-package codelab08;
+package codelab08.bird;
+
+import codelab08.bird.behavior.Flyable;
 
 public class Pigeon extends Bird implements Flyable {
 
