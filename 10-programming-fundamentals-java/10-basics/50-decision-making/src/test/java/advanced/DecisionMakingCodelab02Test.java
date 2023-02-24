@@ -39,7 +39,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingHockeyWillPrintOutFootballDescription() {
+    void ifProvidingHockeyWillPrintOutHockeyDescription() {
         printOutSport("Hockey");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Hockey
@@ -52,7 +52,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingRugbyWillPrintOutFootballDescription() {
+    void ifProvidingRugbyWillPrintOutRugbyDescription() {
         printOutSport("Rugby");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Rugby
@@ -65,7 +65,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingArcheryWillPrintOutFootballDescription() {
+    void ifProvidingArcheryWillPrintOutArcheryDescription() {
         printOutSport("Archery");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Archery
@@ -78,7 +78,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingTennisWillPrintOutFootballDescription() {
+    void ifProvidingTennisWillPrintOutTennisDescription() {
         printOutSport("Tennis");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Tennis
@@ -91,7 +91,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingHandballWillPrintOutFootballDescription() {
+    void ifProvidingHandballWillPrintOutHandballDescription() {
         printOutSport("Handball");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Handball
@@ -104,7 +104,7 @@ class DecisionMakingCodelab02Test {
     }
 
     @Test
-    void ifProvidingOtherSportWillPrintOutFootballDescription() {
+    void ifProvidingOtherSportWillPrintOutOtherSportDescription() {
         printOutSport("Judo");
         assertThat(outContent.toString()).isEqualToNormalizingNewlines("""
                 You have selected Judo

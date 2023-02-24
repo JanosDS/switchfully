@@ -47,6 +47,7 @@ class ArraysCodelab08Test {
         ArraysCodelab08.printOutTenantStatus(-1, namesDatabase, rentDatabase);
         ArraysCodelab08.printOutTenantStatus(10, namesDatabase, rentDatabase);
 
-        Assertions.assertThat(outContent.toString().trim()).isEqualTo("Apartment -1 does not exist.\r\nApartment 10 does not exist.");
+        Assertions.assertThat(outContent.toString().trim()).isEqualTo("Apartment -1 does not exist."
+                + System.lineSeparator() + "Apartment 10 does not exist.");
     }
 }

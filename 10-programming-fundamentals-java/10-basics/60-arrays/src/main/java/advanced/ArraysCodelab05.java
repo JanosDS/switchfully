@@ -26,15 +26,15 @@ public class ArraysCodelab05 {
      * If either index1 or index2 is too small or too big do nothing
      *
      * Visual example:
-     * Say you have the following array [12, 24, 36, 48, 60] and you want to replace the 3th element with the 5th.
+     * Say you have the following array [12, 24, 36, 48, 60] and you want to replace the 3rd element with the 5th.
      *
      * In the memory this will look like this:
      *   memory address      value in memory
-     *      XX0                     12 <- pointer too start of array
+     *      XX0                     12 <- pointer to start of array
      *      XX1                     24
-     *      XX2                     36 <- 3th element in the array needs to be replaced with the 5th element (60)
+     *      XX2                     36 <- 3rd element in the array needs to be replaced with the 5th element (60)
      *      XX3                     48
-     *      XX4                     60 <- 5th element in the array needs to be replaced with the 3th element (36)
+     *      XX4                     60 <- 5th element in the array needs to be replaced with the 3rd element (36)
      *
      * Hint!
      * If your stuck, try to first replace the element at index1 with the element at index2 but not vice-versa (so only the element at index1 changes and the element at index2 stays the same).

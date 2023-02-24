@@ -1,6 +1,5 @@
 package basic;
 
-import basic.MethodsCodelab01;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,6 +27,7 @@ class MethodsCodelab01Test {
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
+
     @Test
     void legalDrinkingAgeIsCalled() {
         MethodsCodelab01.main(null);

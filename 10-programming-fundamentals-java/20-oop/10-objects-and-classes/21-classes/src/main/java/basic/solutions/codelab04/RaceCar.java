@@ -14,19 +14,19 @@ public class RaceCar {
 
     public RaceCar(int numberOfGears, int currentGear) {
         this.numberOfGears = numberOfGears;
-        this.currentGear = validateNewGear(currentGear);
+        this.currentGear = shiftGear(currentGear);
     }
 
 
     public void shiftGearDown() {
-        this.currentGear = validateNewGear(currentGear - 1);
+        this.currentGear = shiftGear(currentGear - 1);
     }
 
     public void shiftGearUp() {
-        this.currentGear = validateNewGear(currentGear + 1);
+        this.currentGear = shiftGear(currentGear + 1);
     }
 
-    private int validateNewGear(int currentGear) {
+    private int shiftGear(int currentGear) {
         if (currentGear < DEFAULT_CURRENT_GEAR) {
             return DEFAULT_CURRENT_GEAR;
         }

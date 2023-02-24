@@ -27,10 +27,10 @@ Recursive functions are fairly simple and contain typically two parts.
 That's it you're now ready to create your own recursive functions.
 
 ## Warning!
-While some language are meant to work with recursions java isn't.
+While some language are meant to work with recursions, java isn't.
 The number of recursions is always limited in java.
-If you do to many recursion you'll get a **StackOverflowException**.
-But don't worry as long you keep the repitions under 7000 you should be fine.
+If you do too much recursion, you'll get a **StackOverflowException**.
+But don't worry as long you keep the repetitions under 7000 you should be fine.
 
 ## Extra exercises
 Done with the exercises? You can find more on: https://codingbat.com/java/Recursion-1

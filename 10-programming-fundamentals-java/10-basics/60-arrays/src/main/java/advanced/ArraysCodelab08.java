@@ -10,7 +10,7 @@ public class ArraysCodelab08 {
      *
      * 1. Implement the method so that it prints out the tenants name and if he/she has paid the rent or not.
      *      - printOutTenantStatus(1, {'Marc', 'Jef'}, {true, false}) --> Will print out: "Marc has paid his/her rent.".
-     *      - printOutTenantStatus(1, {'Marc','Jef'}, {true, false}) --> Will print out: "Jef has not paid his/her rent.".
+     *      - printOutTenantStatus(2, {'Marc','Jef'}, {true, false}) --> Will print out: "Jef has not paid his/her rent.".
      * 2. As always think of the edge cases
      *      - In case of an edge case you can print out "Apartment <number> does not exist."
      */
