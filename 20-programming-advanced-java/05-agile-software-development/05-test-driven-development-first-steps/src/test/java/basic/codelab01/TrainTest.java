@@ -38,7 +38,7 @@ class TrainTest {
 		Assertions.assertThat(train3.customerSatisfaction()).isEqualTo("This train is annoying me!");
 		Assertions.assertThat(train4.customerSatisfaction()).isEqualTo("B-u-u-urn it!");
 		assertThrows(IllegalArgumentException.class, () -> {
-			Assertions.assertThat(train5.customerSatisfaction()).isEqualTo(new IllegalArgumentException("The world explodes"));
+			Assertions.assertThat(train5.customerSatisfaction());
 		});
 
 	}
