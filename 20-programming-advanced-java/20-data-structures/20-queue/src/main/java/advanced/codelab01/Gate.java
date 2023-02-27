@@ -5,25 +5,26 @@ import java.util.Queue;
 
 class Gate {
 
-    private final Queue<Passenger> passengersToBoard;
+	private final Queue<Passenger> passengersToBoard;
 
-    Gate() {
-        this.passengersToBoard = new PriorityQueue<>();
-    }
+	Gate() {
+		this.passengersToBoard = new PriorityQueue<>(Passenger::compareTo);
+	}
 
-    /**
-     * Add the passenger to the queue
-     */
-    void goStandInLineToBoard(Passenger passenger) {
-        // implement me
-    }
+	/**
+	 * Add the passenger to the queue
+	 */
+	void goStandInLineToBoard(Passenger passenger) {
+		passengersToBoard.add(passenger);
+	}
 
-    /**
-     * Take the 'next-in-line' passenger and return it (make sure it's no longer part of the queue)
-     * @return the passenger that may board
-     */
-    Passenger letNextPassengerBoard() {
-        // implement me
-        return null;
-    }
+	/**
+	 * Take the 'next-in-line' passenger and return it (make sure it's no longer part of the queue)
+	 *
+	 * @return the passenger that may board
+	 */
+	Passenger letNextPassengerBoard() {
+		// implement me
+		return passengersToBoard.poll();
+	}
 }
