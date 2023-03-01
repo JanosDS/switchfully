@@ -7,6 +7,8 @@ class MyExceptionService {
 
     void doSomethingExceptional() {
         // throw an exception (read the readme.md file)
+        throw new IllegalStateException("illegal state Exception thrown");
+
     }
 
 }

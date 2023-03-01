@@ -5,12 +5,16 @@ package basic.codelab01;
  */
 public class ExceptionApplication {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        MyExceptionService myExceptionService = new MyExceptionService();
-        myExceptionService.doSomethingExceptional();
-        System.out.println("I can show you the world!");
+		MyExceptionService myExceptionService = new MyExceptionService();
+		try {
+			myExceptionService.doSomethingExceptional();
+		} catch (IllegalStateException ex) {
+			System.err.println(ex.getMessage());
+		}
+		System.out.println("I can show you the world!");
 
-    }
+	}
 
 }
