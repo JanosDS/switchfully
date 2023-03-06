@@ -1,14 +1,15 @@
 package advanced.codelab01;
 
-public class Box {
+public class Box<T> {
 
-    private Object contentOfBox;
 
-    void store(Object contentOfBox) {
-        this.contentOfBox = contentOfBox;
-    }
+	private T t;
 
-    Object getContentOfBox() {
-        return contentOfBox;
-    }
+	public void store(T t) {
+		this.t = t;
+	}
+
+	public T getContentOfBox() {
+		return t;
+	}
 }
