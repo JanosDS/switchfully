@@ -39,6 +39,5 @@ public class Bankaccount implements BankaccountWithdraw, BankaccountDeposit, Ban
 		if (this.pincode != pincode) {
 			throw new WrongPincodeException("Wrong pincode");
 		}
-
 	}
 }

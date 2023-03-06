@@ -10,8 +10,18 @@ public class BankaccountInformationProxy implements BankaccountInformation {
 		this.bankaccount = bankaccount;
 	}
 
+	public void validatePincode(int pincode) {
+		//Limit this access and log all attempts
+		bankaccount.validatePincode(pincode);
+	}
+
+	public Bankaccount getBankaccount() {
+		return bankaccount;
+	}
+
 	@Override
 	public double getMoney() {
+		// Limit the access to this
 		return bankaccount.getMoney();
 	}
 

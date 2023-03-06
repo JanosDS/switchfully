@@ -17,11 +17,13 @@ public class BankaccountWithdrawProxy implements BankaccountWithdraw {
 
 	@Override
 	public void withDrawMoney(double amount, int pincode) {
+		System.out.println("Executing extra security checks before withdrawing the money.");
 		bankaccount.validatePincode(pincode);
 
 		Withdrawal withdrawal = new Withdrawal(amount);
 		if (!withdrawals.contains(withdrawal)) {
 			bankaccount.withDrawMoney(amount, pincode);
+			System.out.println("The withdrawal was done successfull.");
 		} else {
 			throw new WithdrawalException("This withdrawal has already been done.");
 		}
