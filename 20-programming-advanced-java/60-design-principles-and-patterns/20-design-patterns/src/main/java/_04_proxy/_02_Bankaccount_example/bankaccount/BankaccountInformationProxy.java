@@ -1,6 +1,9 @@
 package _04_proxy._02_Bankaccount_example.bankaccount;
 
+import _04_proxy._02_Bankaccount_example.BankDatabase;
+
 import java.util.Objects;
+import java.util.Scanner;
 
 public class BankaccountInformationProxy implements BankaccountInformation {
 
@@ -8,6 +11,16 @@ public class BankaccountInformationProxy implements BankaccountInformation {
 
 	public BankaccountInformationProxy(Bankaccount bankaccount) {
 		this.bankaccount = bankaccount;
+	}
+
+	public BankaccountInformationProxy(String name) {
+
+		this.bankaccount = findAccountByName(name);
+	}
+
+	public static Bankaccount findAccountByName(String name) {
+		BankDatabase dbConnection = new BankDatabase();
+		return dbConnection.findBankaccount(name);
 	}
 
 	public void validatePincode(int pincode) {

@@ -17,7 +17,7 @@ public class BankApplication {
 //		Before we allow access to any operations, the user needs to login.
 //		To do this, we use a proxy that only allows the display of information
 //		This proxy recieves the data from a database search.
-		BankaccountInformationProxy bankaccountInfo = new BankaccountInformationProxy(findAccountByName(in));
+		BankaccountInformationProxy bankaccountInfo = findAccountByName(in);
 		try {
 			bankaccountInfo.validatePincode(askPincode(in));
 			in.nextLine();
@@ -25,7 +25,7 @@ public class BankApplication {
 			// ask the information needed to perform a transaction
 			System.out.println("To who do you want to send money?");
 			// search for the recieving account in the database
-			BankaccountInformationProxy bankaccountRecieverInfo = new BankaccountInformationProxy(findAccountByName(in));
+			BankaccountInformationProxy bankaccountRecieverInfo = findAccountByName(in);
 			// ask information needed to do the transaction
 			int amount = askAmount(in);
 			in.nextLine();
@@ -49,10 +49,9 @@ public class BankApplication {
 
 	}
 
-	public static Bankaccount findAccountByName(Scanner in) {
+	public static BankaccountInformationProxy findAccountByName(Scanner in) {
 		String name = in.nextLine();
-		BankDatabase dbConnection = new BankDatabase();
-		return dbConnection.findBankaccount(name);
+		return new BankaccountInformationProxy(name);
 	}
 
 	public static int askPincode(Scanner in) {
