@@ -21,12 +21,7 @@ public class BankaccountTransactionProxy implements BankaccountTransaction {
 		Transaction newTransaction = new Transaction(amount, reciever);
 		if (!transactions.contains(newTransaction)) {
 			bankaccountWithdrawProxy.withDrawMoney(amount, pincode);
-			// If reciever is own account
-			
 			reciever.depositMoney(amount);
-
-			// else make connection to server and get recieving account
-
 			//Log transaction
 			transactions.add(newTransaction);
 		} else {

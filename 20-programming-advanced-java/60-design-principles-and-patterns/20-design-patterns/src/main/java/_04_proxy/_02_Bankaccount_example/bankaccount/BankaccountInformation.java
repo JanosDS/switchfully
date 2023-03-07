@@ -4,4 +4,5 @@ public interface BankaccountInformation {
 
 	double getMoney();
 	String getClient();
+	
 }

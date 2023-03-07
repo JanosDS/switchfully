@@ -3,22 +3,17 @@ package _04_proxy._02_Bankaccount_example.bankaccount;
 import _04_proxy._02_Bankaccount_example.BankDatabase;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 public class BankaccountInformationProxy implements BankaccountInformation {
 
-	private Bankaccount bankaccount;
-
-	public BankaccountInformationProxy(Bankaccount bankaccount) {
-		this.bankaccount = bankaccount;
-	}
+	private final Bankaccount bankaccount;
 
 	public BankaccountInformationProxy(String name) {
-
 		this.bankaccount = findAccountByName(name);
 	}
 
 	public static Bankaccount findAccountByName(String name) {
+		//Check if the information is already present else
 		BankDatabase dbConnection = new BankDatabase();
 		return dbConnection.findBankaccount(name);
 	}
