@@ -10,11 +10,13 @@ the alphabet is rotated by one as each letter goes down the chart.
 
 ```
    ABCDEFGHIJKLMNOPQRSTUVWXYZ
- A abcdefghijklmnopqrstuvwxyz
- B bcdefghijklmnopqrstuvwxyza
+   0                        26
+   97                       122
+ A abcdefghijklmnopqrstuvwxyz  97 / 0 
+ B bcdefghijklmnopqrstuvwxyza         
  C cdefghijklmnopqrstuvwxyzab
  D defghijklmnopqrstuvwxyzabc
- E efghijklmnopqrstuvwxyzabcd
+ E efghijklmnopqrstuvwxyzabcd e - c = g --> 
  F fghijklmnopqrstuvwxyzabcde
  G ghijklmnopqrstuvwxyzabcdef
  H hijklmnopqrstuvwxyzabcdefg
@@ -22,7 +24,7 @@ the alphabet is rotated by one as each letter goes down the chart.
  J jklmnopqrstuvwxyzabcdefghi
  K klmnopqrstuvwxyzabcdefghij
  L lmnopqrstuvwxyzabcdefghijk
- M mnopqrstuvwxyzabcdefghijkl
+ M mnopqrstuvwxyzabcdefghijkl 109 - 115 --> M:109-97= 12 S:115-97=18  E:101-97=4 \ offset=12 a->15 26-11
  N nopqrstuvwxyzabcdefghijklm
  O opqrstuvwxyzabcdefghijklmn
  P pqrstuvwxyzabcdefghijklmno
@@ -35,10 +37,10 @@ the alphabet is rotated by one as each letter goes down the chart.
  W wxyzabcdefghijklmnopqrstuv
  X xyzabcdefghijklmnopqrstuvw
  Y yzabcdefghijklmnopqrstuvwx
- Z zabcdefghijklmnopqrstuvwxy
+ Z zabcdefghijklmnopqrstuvwxy 122 / 26
 ```
 
-Both parties need to decide on a secret keyword.  This keyword is not written down anywhere, but memorized.
+Both parties need to decide on a secret keyword. This keyword is not written down anywhere, but memorized.
 
 To encode the message, first write down the message.
 
@@ -53,11 +55,12 @@ sconessconessco
 meetmebythetree
 ```
 
-Now you can look up the column _S_ in the table and follow it down until it meets the _M_ row. The value at the intersection is the letter _e_.  All the letters would be thus encoded.
+Now you can look up the column _S_ in the table and follow it down until it meets the _M_ row. The value at the
+intersection is the letter _e_. All the letters would be thus encoded.
 
 ```
-sconessconessco
-meetmebythetree
+sconessconessco -> kolom waarde
+meetmebythetree -> rij waarde letter
 egsgqwtahuiljgs
 ```
 
