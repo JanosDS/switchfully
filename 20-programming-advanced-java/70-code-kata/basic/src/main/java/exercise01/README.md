@@ -10,7 +10,7 @@ We've listed the differences below in the rules.
 
 ## Rules
 
-```
+```90
 "M" <-> "1000"
 "D" <-> "500"
 "C" <-> "100"
@@ -36,7 +36,9 @@ We've listed the differences below in the rules.
 "IX" <-> "9"
 "IV" <-> "4"
 ```
+
 ## Examples
+
 ```
 "MCDXLIV"  --> "M CD XL IV"  <-> "1444"
 "MMCMXCIX" --> "MM CM XC IX" <-> "2999"
@@ -44,4 +46,5 @@ We've listed the differences below in the rules.
 ```
 
 ## Exercise
+
 Build a system that can convert Roman numerals to arabic numbers and vice versa.
