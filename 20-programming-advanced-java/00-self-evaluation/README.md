@@ -24,7 +24,7 @@ Besides the requirements written in the exercises, your solution needs to:
     * Makes sure that you have implemented all requirements when you're finished. You wouldn't be the first that has
       missed something.
 
-1. [:x:] Codelab 02 (Movie Rental)
+1. [:heavy_check_mark:] Codelab 02 (Movie Rental)
     * Requirements are found in codelab02/README.md
     * Make sure that you have a RentalStoreService class
     * Testing user input is really difficult, so you can skip testing this. Try to find a way to test everything else
