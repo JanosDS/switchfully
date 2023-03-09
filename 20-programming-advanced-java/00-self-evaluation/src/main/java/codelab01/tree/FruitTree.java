@@ -22,8 +22,14 @@ public class FruitTree extends Tree {
 
 	public void addFruit(Fruit fruit) {
 		if (fruitItems.size() < MAX_FRUIT_PER_TREE) {
-			fruitItems.add(fruit);
+			if (super.getTreeType().canHaveFruitType(fruit)) {
+				fruitItems.add(fruit);
+			}
 		}
+	}
+
+	public int getAmountOfFruit() {
+		return fruitItems.size();
 	}
 
 	@Override

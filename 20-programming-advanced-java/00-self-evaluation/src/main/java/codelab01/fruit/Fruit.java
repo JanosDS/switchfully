@@ -11,4 +11,8 @@ public class Fruit {
 		this.color = color;
 		this.fruitType = fruitType;
 	}
+
+	public FruitType getFruitType() {
+		return fruitType;
+	}
 }

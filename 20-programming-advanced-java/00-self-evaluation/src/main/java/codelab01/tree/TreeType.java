@@ -1,5 +1,8 @@
 package codelab01.tree;
 
+import codelab01.fruit.Fruit;
+import codelab01.fruit.FruitType;
+
 public enum TreeType {
 
 	APPLE_TREE("Apple tree", 0.6, true),
@@ -11,7 +14,6 @@ public enum TreeType {
 
 	private double growSpeed;
 	private boolean isFruitTree;
-
 	private String name;
 
 	TreeType(String name, double growSpeed, boolean isFruitTree) {
@@ -26,6 +28,12 @@ public enum TreeType {
 
 	public boolean isFruitTree() {
 		return isFruitTree;
+	}
+
+	public boolean canHaveFruitType(Fruit fruit) {
+		return (this == APPLE_TREE && fruit.getFruitType() == FruitType.APPLE) ||
+				(this == ORANGE_TREE && fruit.getFruitType() == FruitType.ORANGE) ||
+				(this == BULA_YAKA_TREE && (fruit.getFruitType() == FruitType.BULA || fruit.getFruitType() == FruitType.YAKA));
 	}
 
 	@Override

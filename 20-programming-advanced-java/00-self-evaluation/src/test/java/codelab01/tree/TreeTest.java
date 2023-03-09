@@ -17,4 +17,5 @@ class TreeTest {
 		double result = tree.getHeight().getHeightInMeter();
 		Assertions.assertEquals(expected, result);
 	}
+
 }
