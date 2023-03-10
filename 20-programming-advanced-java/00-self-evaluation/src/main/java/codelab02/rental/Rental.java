@@ -27,4 +27,14 @@ public class Rental {
 	public LocalDate getReturnDate() {
 		return returnDate;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder rentalDetails = new StringBuilder();
+		rentalDetails.append("-- NEW RENTAL --");
+		rentalDetails.append("\n").append(customer);
+		rentalDetails.append("\n").append(movie);
+		rentalDetails.append("\n").append(returnDate);
+		return rentalDetails.toString();
+	}
 }

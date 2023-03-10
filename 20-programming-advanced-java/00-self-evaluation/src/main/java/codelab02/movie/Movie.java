@@ -24,4 +24,13 @@ public class Movie {
 	public MovieType getMovieType() {
 		return movieType;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder movieDetails = new StringBuilder();
+		movieDetails.append(title);
+		movieDetails.append(": ").append(movieType).append(" -").append(price).append("Eur");
+
+		return movieDetails.toString();
+	}
 }

@@ -60,4 +60,19 @@ public class MovieRentalStore {
 				.orElseThrow(() -> new CustomerNotFoundException("Customer not found."));
 	}
 
+	@Override
+	public String toString() {
+		String SPACING = "     ";
+		StringBuilder storeDetails = new StringBuilder();
+		storeDetails.append("The movie rental service has:");
+		storeDetails.append("\n- ").append(customers.size()).append(" customers");
+		for (Customer customer : customers) {
+			storeDetails.append("\n").append(SPACING).append("*").append(customer.toString());
+		}
+		storeDetails.append("\n- ").append(movies.size()).append(" movies");
+		for (Movie movie : movies) {
+			storeDetails.append("\n").append(SPACING).append("*").append(movie.toString());
+		}
+		return storeDetails.toString();
+	}
 }

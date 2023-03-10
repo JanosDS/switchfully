@@ -1,19 +1,27 @@
 package codelab02;
 
+import codelab02.customer.Customer;
+import codelab02.exceptions.CustomerNotFoundException;
 import codelab02.movie.Genre;
 import codelab02.movie.Movie;
 import codelab02.movie.MovieType;
 import codelab02.rentalStore.MovieRentalStore;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String[] args) {
-		MovieRentalStore rentalStoreService = new MovieRentalStore();
+		RentalService service = new RentalService();
+		Scanner scanner = new Scanner(System.in);
 
-		Movie scaryMovie = new Movie("Scary Movie", 2, Genre.HORROR, MovieType.TRENDING_MOVIE);
-		Movie funnyMovie = new Movie("Jackass2", 3, Genre.COMEDY, MovieType.OLDER_MOVIE);
+		service.printServiceOverview();
 
-		rentalStoreService.addMovie(scaryMovie);
-		rentalStoreService.addMovie(funnyMovie);
+		service.askRenter(scanner);
+
+		service.askMovieToRent(scanner);
+
+		service.printRental();
 
 	}
 }
