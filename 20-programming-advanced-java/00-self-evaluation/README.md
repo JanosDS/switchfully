@@ -66,10 +66,10 @@ A few hints:
 
 ### Codelabs
 
-1. [:x:] Codelab 03 (Movie Rental Refactoring)
+1. [:heavy_check_mark:] Codelab 03 (Movie Rental Refactoring)
     * Requirements are found in codelab03/README.md
 
-1. [:x:] Codelab 01 (Treehehehe)
+1. [:heavy_check_mark:] Codelab 01 (Treehehehe)
     * Go back over your code for this exercise and try to improve the quality
 
 1. [:x:] Codelab 02 (Movie Rental)

@@ -10,46 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class HeightTest {
 
 
-	@Nested
-	class HeightConvertToFeetTests {
-		@Test
-		@DisplayName("Convert height in meters to feet")
-		void whenGivenHeightInMeters_convertToFeet() {
-			Height heightInMeter = new Height(30, HeightUnit.METER);
-			Height heightInFeet = Height.convertMeterToFeet(heightInMeter);
-			Assertions.assertEquals(98.42, heightInFeet.getHeightAmount());
-		}
-
-		@Test
-		@DisplayName("Convert height in feet to feet - throw exception")
-		void whenGivenHeightInFeet_convertToFeet_throwException() {
-			Height heightInMeter = new Height(30, HeightUnit.FOOT);
-
-			Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-				Height heightInFeet = Height.convertMeterToFeet(heightInMeter);
-			});
-		}
+	@Test
+	void getHeightInMeter_whenHeightIsFeet() {
+		Height height = new Height(1, HeightUnit.FOOT);
+		Assertions.assertEquals(0.31, height.getHeightInMeter());
 	}
 
-
-	@Nested
-	class HeightConvertToMeterTests {
-		@Test
-		@DisplayName("Convert height in feet to meter")
-		void whenGivenHeightInFeet_convertToMeter() {
-			Height heightInFeet = new Height(30, HeightUnit.FOOT);
-			Height heightInMeter = Height.convertFeetToMeter(heightInFeet);
-			Assertions.assertEquals(9.15, heightInMeter.getHeightAmount());
-		}
-
-		@Test
-		@DisplayName("Convert height in meter to meter - throw exception")
-		void whenGivenHeightInMeter_convertToMeter_throwException() {
-			Height heightInFeet = new Height(30, HeightUnit.METER);
-
-			Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-				Height heightInMeter = Height.convertFeetToMeter(heightInFeet);
-			});
-		}
+	@Test
+	void getHeightInFeet_whenHeightIsMeter() {
+		Height height = new Height(1, HeightUnit.METER);
+		Assertions.assertEquals(3.29, height.getHeightInFeet());
 	}
 }
