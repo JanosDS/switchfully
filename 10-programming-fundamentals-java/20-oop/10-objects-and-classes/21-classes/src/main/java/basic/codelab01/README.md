@@ -25,7 +25,7 @@ Create a new class `Alien` that has the following instance variables (which form
 ## Encapsulation
 
 Make sure you properly encapsulate these instance variables. 
-They should not only be visible and thus usable inside the Alien class, not outside.
+They should only be visible and thus usable inside the Alien class, not outside.
 
 ## A Class to Execute
 
