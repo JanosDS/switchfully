@@ -22,7 +22,7 @@ For each field, create a method that returns the (value of the) field:
 
 Additionally, also create methods that returns the following values.
 - annual salary (monthly salary * 13.9)
-- full name (firstName + lastnName)
+- full name (firstName + lastName)
 
 Create the following methods, which set / modify the following values
 - A method to set the salary to a provided value
