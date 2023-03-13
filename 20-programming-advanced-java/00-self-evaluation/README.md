@@ -72,5 +72,5 @@ A few hints:
 1. [:heavy_check_mark:] Codelab 01 (Treehehehe)
     * Go back over your code for this exercise and try to improve the quality
 
-1. [:x:] Codelab 02 (Movie Rental)
+1. [:heavy_check_mark:] Codelab 02 (Movie Rental)
     * Go back over your code for this exercise and try to improve the quality
