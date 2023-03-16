@@ -29,8 +29,8 @@ public class RentalService {
 	private void setup() {
 		Movie scaryMovie = new Movie("Scary Movie", 2, Genre.HORROR, MovieType.TRENDING_MOVIE);
 		Movie funnyMovie = new Movie("Jackass2", 3, Genre.COMEDY, MovieType.OLDER_MOVIE);
-		Customer customer1 = new Customer("Janos", LocalDate.of(1996, 01, 16), 27);
-		Customer customer2 = new Customer("Franky", LocalDate.of(2013, 12, 24), 10);
+		Customer customer1 = new Customer("Janos", LocalDate.of(1996, 01, 16));
+		Customer customer2 = new Customer("Franky", LocalDate.of(2013, 12, 24));
 		rentalStoreService.addMovie(scaryMovie);
 		rentalStoreService.addMovie(funnyMovie);
 		rentalStoreService.addCustomer(customer1);

@@ -8,6 +8,7 @@ example body. The first two solutions we provide ourselves.
 The domain (and the start of all our endpoints) of our application is https://digibooky.com
 
 ---
+
 ## Basic operations
 
 ### Endpoint
@@ -38,7 +39,8 @@ Getting one specific book from the system
 
 ### Solution
 
-    your solution here
+    GET https://digibooky.com/books/{id}
+    GET https://digibooky.com/books/1
 
 ---
 
@@ -48,7 +50,8 @@ Deleting one specific book from the system
 
 ### Solution
 
-    your solution here
+    DELETE https://digibooky.com/books/{id}
+    DELETE https://digibooky.com/books/1
 
 ---
 
@@ -58,7 +61,10 @@ Updating one book with new information
 
 ### Solution
 
-    your solution here
+    PATCH https://digibooky.com/books/1
+    {
+        "title": "new book title"
+    }
 
 ---
 
@@ -68,7 +74,7 @@ Getting all the books in the system that have 'the' in their title
 
 ### Solution
 
-    your solution here
+    GET https://digibooky.com/books?title=the
 
 ---
 
@@ -78,7 +84,7 @@ Getting all the books in the system that have 'the' in their title and have an a
 
 ### Solution
 
-    your solution here
+    GET https://digibooky.com/books?title=the&author=a
 
 ---
 
@@ -88,7 +94,7 @@ Reserving a specific book
 
 ### Solution
 
-    your solution here
+        POST https://digibooky.com/books/1/reserve
 
 ---
 
@@ -98,7 +104,7 @@ Getting the list of authors from a specific book
 
 ### Solution
 
-    your solution here
+        GET https://digibooky.com/books/1/authors
 
 ---
 
@@ -108,7 +114,7 @@ Getting the list of all lenders from a specific book with lending date before 20
 
 ### Solution
 
-    your solution here
+       GET https://digibooky.com/books/lenders?dateBefore=2020-12-24
 
 ---
 
@@ -118,4 +124,7 @@ Adding a new author to a specific book
 
 ### Solution
 
-    your solution here
+    PATCH https://digibooky.com/books/1/authors
+    {
+        "author"= "new author"
+    }

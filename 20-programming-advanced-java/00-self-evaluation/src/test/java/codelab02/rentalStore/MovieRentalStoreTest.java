@@ -26,7 +26,7 @@ class MovieRentalStoreTest {
 		funnyMovie = new Movie("Jackass2", 3, Genre.COMEDY, MovieType.OLDER_MOVIE);
 		rentalStoreService.addMovie(scaryMovie);
 		rentalStoreService.addMovie(funnyMovie);
-		client = new Customer("Client", LocalDate.of(2000, 02, 07), 23);
+		client = new Customer("Client", LocalDate.of(2000, 9, 7));
 		rentalStoreService.addCustomer(client);
 	}
 

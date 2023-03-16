@@ -8,6 +8,7 @@ public enum MovieType {
 
 	private final int priceCode;
 
+
 	MovieType(int priceCode) {
 		this.priceCode = priceCode;
 	}

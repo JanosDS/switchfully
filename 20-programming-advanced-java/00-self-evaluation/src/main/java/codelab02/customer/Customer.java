@@ -5,12 +5,14 @@ import java.time.LocalDate;
 public class Customer {
 	private String name;
 	private LocalDate birthdate;
-	private int age;
 
-	public Customer(String name, LocalDate birthdate, int age) {
+	public Customer(String name, LocalDate birthdate) {
 		this.name = name;
 		this.birthdate = birthdate;
-		this.age = age;
+	}
+
+	public int getAge() {
+		return LocalDate.now().getYear() - birthdate.getYear();
 	}
 
 	public String getName() {
@@ -19,6 +21,6 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return name + ", " + age + " years old.";
+		return name + ", " + getAge() + " years old.";
 	}
 }

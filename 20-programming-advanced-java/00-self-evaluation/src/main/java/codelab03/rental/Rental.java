@@ -38,6 +38,7 @@ public class Rental {
 		if (movie.getMovieType() == MovieType.NEW_RELEASE) {
 			price += daysRented * 3;
 		}
+
 		return price;
 	}
 

@@ -25,11 +25,19 @@ public class Movie {
 		return movieType;
 	}
 
+	public int getRentDays() {
+		return movieType.getRETURN_TIME_IN_DAYS();
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder movieDetails = new StringBuilder();
-		movieDetails.append(title);
-		movieDetails.append(": ").append(movieType).append(" -").append(price).append("Eur");
+		movieDetails.append(title)
+				.append(": ")
+				.append(movieType)
+				.append(" -")
+				.append(price)
+				.append("Eur");
 
 		return movieDetails.toString();
 	}

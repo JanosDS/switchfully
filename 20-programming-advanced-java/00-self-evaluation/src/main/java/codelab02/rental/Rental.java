@@ -13,7 +13,7 @@ public class Rental {
 	public Rental(Customer customer, Movie movie) {
 		this.customer = customer;
 		this.movie = movie;
-		this.returnDate = LocalDate.now().plusWeeks(1);
+		this.returnDate = LocalDate.now().plusDays(movie.getRentDays());
 	}
 
 	public Customer getCustomer() {

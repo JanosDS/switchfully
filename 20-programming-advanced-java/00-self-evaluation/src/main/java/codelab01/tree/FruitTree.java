@@ -1,6 +1,7 @@
 package codelab01.tree;
 
 import codelab01.fruit.Fruit;
+import codelab01.fruit.FruitType;
 import codelab01.height.Height;
 
 import java.util.ArrayList;
