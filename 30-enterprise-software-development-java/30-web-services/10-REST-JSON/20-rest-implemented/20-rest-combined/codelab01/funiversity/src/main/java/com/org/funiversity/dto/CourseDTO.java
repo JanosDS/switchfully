@@ -2,19 +2,18 @@ package com.org.funiversity.dto;
 
 import com.org.funiversity.domain.Professor;
 
-import java.util.UUID;
 
 public class CourseDTO {
 	private final String id;
 	private String name;
 	private int amountOfStudyPoints;
-	private Professor professor;
+	private ProfessorDTO professorDTO;
 
-	public CourseDTO(String id, String name, int amountOfStudyPoints, Professor professor) {
+	public CourseDTO(String id, String name, int amountOfStudyPoints, ProfessorDTO professorDTO) {
 		this.id = id;
 		this.name = name;
 		this.amountOfStudyPoints = amountOfStudyPoints;
-		this.professor = professor;
+		this.professorDTO = professorDTO;
 	}
 
 	public String getId() {
@@ -29,7 +28,7 @@ public class CourseDTO {
 		return amountOfStudyPoints;
 	}
 
-	public Professor getProfessor() {
-		return professor;
+	public ProfessorDTO getProfessor() {
+		return professorDTO;
 	}
 }

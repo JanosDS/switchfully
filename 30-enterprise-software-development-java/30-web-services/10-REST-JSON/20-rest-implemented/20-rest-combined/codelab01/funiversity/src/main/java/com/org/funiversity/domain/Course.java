@@ -18,6 +18,13 @@ public class Course {
 		this.professor = professor;
 	}
 
+	public Course(String id, String name, int amountOfStudyPoints, Professor professor) {
+		this.id = id;
+		this.name = name;
+		setAmountOfStudyPoints(amountOfStudyPoints);
+		this.professor = professor;
+	}
+
 	public String getId() {
 		return id;
 	}

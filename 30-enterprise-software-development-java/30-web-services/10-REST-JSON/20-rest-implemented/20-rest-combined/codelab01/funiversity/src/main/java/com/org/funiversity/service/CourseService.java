@@ -1,9 +1,11 @@
 package com.org.funiversity.service;
 
 import com.org.funiversity.domain.Course;
+import com.org.funiversity.domain.Professor;
 import com.org.funiversity.dto.CourseDTO;
 import com.org.funiversity.dto.CourseMapper;
 import com.org.funiversity.repository.CourseRepository;
+import com.org.funiversity.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,8 +25,7 @@ public class CourseService {
 	}
 
 	public CourseDTO addNewCourse(CourseDTO newCourse) {
-		Course course = new Course(newCourse.getName(), newCourse.getAmountOfStudyPoints(), newCourse.getProfessor());
-		return courseMapper.toDTO(courseRepository.addCourse(course));
+		return courseMapper.toDTO(courseRepository.addCourse(courseMapper.toDomain(newCourse)));
 	}
 
 	public List<CourseDTO> getCoursesWithStudyPoints(int studyPoints) {

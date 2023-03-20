@@ -16,7 +16,6 @@ public class CourseRepository {
 
 	public CourseRepository() {
 		courseList = new ArrayList<>();
-		courseList.add(new Course("Course one", 5, new Professor("Prof", "Essor")));
 	}
 
 	public List<Course> getAllCourses() {
