@@ -7,6 +7,7 @@ import com.org.funiversity.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProfessorService {
@@ -29,7 +30,9 @@ public class ProfessorService {
 	}
 
 	public ProfessorDTO findProfessorForId(String id) {
-		return professorMapper.toDTO(professorRepository.findProfessorForId(id));
+		return professorRepository.findProfessorForId(id)
+				.map(professorMapper::toDTO)
+				.orElse(null);
 	}
 
 	public ProfessorDTO updateProfessor(ProfessorDTO professorDTOToUpdate) {

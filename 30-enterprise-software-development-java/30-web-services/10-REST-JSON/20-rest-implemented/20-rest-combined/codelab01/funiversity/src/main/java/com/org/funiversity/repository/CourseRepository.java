@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
@@ -33,10 +34,10 @@ public class CourseRepository {
 				.collect(Collectors.toList());
 	}
 
-	public Course findCourseForId(String id) {
+	public Optional<Course> findCourseForId(String id) {
 		return courseList.stream()
 				.filter(course -> course.getId().equals(id))
-				.findFirst()
-				.orElseThrow(() -> new CourseNotFoundException("No course found for ID: " + id));
+				.findFirst();
+		//.orElseThrow(() -> new CourseNotFoundException("No course found for ID: " + id));
 	}
 }

@@ -4,6 +4,8 @@ import com.org.funiversity.domain.Course;
 import com.org.funiversity.domain.Professor;
 import com.org.funiversity.dto.CourseDTO;
 import com.org.funiversity.dto.CourseMapper;
+import com.org.funiversity.dto.ProfessorDTO;
+import com.org.funiversity.exception.ProfessorNotFoundException;
 import com.org.funiversity.repository.CourseRepository;
 import com.org.funiversity.repository.ProfessorRepository;
 import org.springframework.stereotype.Service;
@@ -13,10 +15,12 @@ import java.util.List;
 @Service
 public class CourseService {
 	private final CourseRepository courseRepository;
+	private final ProfessorRepository professorRepository;
 	private final CourseMapper courseMapper;
 
-	public CourseService(CourseRepository courseRepository, CourseMapper courseMapper) {
+	public CourseService(CourseRepository courseRepository, ProfessorRepository professorRepository, CourseMapper courseMapper) {
 		this.courseRepository = courseRepository;
+		this.professorRepository = professorRepository;
 		this.courseMapper = courseMapper;
 	}
 
@@ -25,7 +29,12 @@ public class CourseService {
 	}
 
 	public CourseDTO addNewCourse(CourseDTO newCourse) {
+		validateProfessor(newCourse.getProfessor());
 		return courseMapper.toDTO(courseRepository.addCourse(courseMapper.toDomain(newCourse)));
+	}
+
+	private void validateProfessor(ProfessorDTO professor) {
+		professorRepository.findProfessorForId(professor.getId()).orElseThrow(() -> new ProfessorNotFoundException("The given professor doesn't exist."));
 	}
 
 	public List<CourseDTO> getCoursesWithStudyPoints(int studyPoints) {
@@ -33,6 +42,8 @@ public class CourseService {
 	}
 
 	public CourseDTO getCourseForId(String id) {
-		return courseMapper.toDTO(courseRepository.findCourseForId(id));
+		return courseRepository.findCourseForId(id)
+				.map(courseMapper::toDTO)
+				.orElse(null);
 	}
 }

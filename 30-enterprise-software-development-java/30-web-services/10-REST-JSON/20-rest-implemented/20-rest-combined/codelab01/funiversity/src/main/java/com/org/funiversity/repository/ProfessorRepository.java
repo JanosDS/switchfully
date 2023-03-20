@@ -1,7 +1,6 @@
 package com.org.funiversity.repository;
 
 import com.org.funiversity.domain.Professor;
-import com.org.funiversity.dto.ProfessorDTO;
 import com.org.funiversity.exception.ProfessorNotFoundException;
 import org.springframework.stereotype.Repository;
 
@@ -28,11 +27,10 @@ public class ProfessorRepository {
 		return professor;
 	}
 
-	public Professor findProfessorForId(String idToFind) {
+	public Optional<Professor> findProfessorForId(String idToFind) {
 		return professorList.stream()
 				.filter(professor -> professor.getId().equals(idToFind))
-				.findFirst()
-				.orElseThrow(() -> new ProfessorNotFoundException("No professor found for id: " + idToFind));
+				.findFirst();
 	}
 
 	public Professor updateProfessor(Professor professorToUpdate) {
@@ -41,7 +39,7 @@ public class ProfessorRepository {
 	}
 
 	public Professor deleteProfessor(String id) {
-		Professor profToDelete = findProfessorForId(id);
+		Professor profToDelete = findProfessorForId(id).orElseThrow(() -> new ProfessorNotFoundException("No professor found to delete for ID: " + id));
 		professorList.remove(profToDelete);
 		return profToDelete;
 	}
