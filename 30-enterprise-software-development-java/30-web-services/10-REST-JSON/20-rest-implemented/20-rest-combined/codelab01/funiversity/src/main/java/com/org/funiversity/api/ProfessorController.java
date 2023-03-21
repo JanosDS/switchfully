@@ -1,7 +1,9 @@
 package com.org.funiversity.api;
 
+import com.org.funiversity.domain.user.Feature;
 import com.org.funiversity.dto.ProfessorDTO;
 import com.org.funiversity.service.ProfessorService;
+import com.org.funiversity.service.SecurityService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,9 +12,11 @@ import java.util.List;
 @RequestMapping(value = "professors")
 public class ProfessorController {
 	private final ProfessorService professorService;
+	private final SecurityService securityService;
 
-	public ProfessorController(ProfessorService professorService) {
+	public ProfessorController(ProfessorService professorService, SecurityService securityService) {
 		this.professorService = professorService;
+		this.securityService = securityService;
 	}
 
 	@GetMapping(produces = "application/json")
@@ -21,7 +25,8 @@ public class ProfessorController {
 	}
 
 	@PostMapping(path = "add", consumes = "application/json", produces = "application/json")
-	public ProfessorDTO addProfessor(@RequestBody ProfessorDTO newProfessor) {
+	public ProfessorDTO addProfessor(@RequestHeader String authorization, @RequestBody ProfessorDTO newProfessor) {
+		securityService.validateAuthorization(authorization, Feature.ADD_PROFESSOR);
 		return professorService.addProfessor(newProfessor);
 	}
 
