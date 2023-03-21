@@ -4,9 +4,9 @@ package com.org.funiversity.service;
 import com.org.funiversity.domain.user.Feature;
 import com.org.funiversity.domain.user.User;
 import com.org.funiversity.domain.user.UsernamePassword;
-import com.org.funiversity.exception.authenticationException.UnauthorizatedException;
-import com.org.funiversity.exception.authenticationException.UserNotFoundException;
-import com.org.funiversity.exception.authenticationException.WrongPasswordException;
+import com.org.funiversity.exception.UnauthorizatedException;
+import com.org.funiversity.exception.UserNotFoundException;
+import com.org.funiversity.exception.WrongPasswordException;
 import com.org.funiversity.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
