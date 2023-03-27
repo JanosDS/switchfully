@@ -2,46 +2,56 @@ package basic.codelab01;
 
 import basic.codelab01.domain.User;
 import basic.codelab01.domain.UserRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class UserServiceIntegrationTest {
 
-	private UserService userService;
-	private final User user = new User("Janos");
-	private final User adam = new User("Adam");
+	UserRepository userRepository = new UserRepository();
+	UserService userService = new UserService(userRepository);
+	User USER_A = new User("A");
+	User USER_B = new User("B");
 
+	@Test
+	void addUser_addsUserInUserRepository() {
+		userService.addUser(USER_A);
 
-	@BeforeEach
-	void setupUserService() {
-		this.userService = new UserService(new UserRepository());
-
+		assertThat(userRepository.getForId(USER_A.getId())).isEqualTo(USER_A);
 	}
 
 	@Test
-	void getUser_givenUserId_thenReturnAUser() {
-		userService.addUser(user);
-		Assertions.assertEquals(user, userService.getUser(user.getId()));
+	void getUser_userPresent_returnsUser() {
+		userRepository.add(USER_A);
+
+		User actual = userService.getUser(USER_A.getId());
+
+		assertThat(actual).isEqualTo(USER_A);
 	}
 
+	@Test
+	void getUser_userAbsent_returnsNull() {
+		User actual = userService.getUser(USER_A.getId());
+
+		assertThat(actual).isNull();
+	}
 
 	@Test
 	void getUsersSortedOnNicknameAsc() {
-		userService.addUser(user);
-		userService.addUser(adam);
-		List<User> userList = new ArrayList<>() {{
-			add(user);
-			add(adam);
-		}};
-		userList = userList.stream().sorted(Comparator.comparing(User::getNickname)).toList();
-		Assertions.assertEquals(userList, userService.getUsersSortedOnNicknameAsc());
+		userRepository.add(USER_B);
+		userRepository.add(USER_A);
+
+		List<User> actual = userService.getUsersSortedOnNicknameAsc();
+
+		assertThat(actual).containsExactlyElementsOf(List.of(USER_A, USER_B));
 	}
 
+	@Test
+	void getUsersSortedOnNicknameAsc_noUsers_returnsEmptyList() {
+		List<User> actual = userService.getUsersSortedOnNicknameAsc();
+
+		assertThat(actual).isEmpty();
+	}
 }

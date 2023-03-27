@@ -2,69 +2,75 @@ package basic.codelab01;
 
 import basic.codelab01.domain.User;
 import basic.codelab01.domain.UserRepository;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static java.util.Collections.emptyList;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
+//@RunWith(MockitoJUnitRunner.class) JUNIT 4
 class UserServiceTest {
 
-	private UserRepository userRepositoryMock;
+	@Mock
+	private UserRepository userRepository;
+	@InjectMocks
 	private UserService userService;
 
-	@BeforeEach
-	void setupUserService() {
-		this.userRepositoryMock = Mockito.mock(UserRepository.class);
-		this.userService = new UserService(userRepositoryMock);
+	public static final User USER_A = new User("a");
+	public static final User USER_B = new User("b");
+
+
+	@Test
+	void addUser_addsUserInUserRepository() {
+		userService.addUser(USER_A);
+
+		Mockito.verify(userRepository, times(1)).add(USER_A);
 	}
 
 	@Test
-	void getUser_givenUserId_thenReturnAUser() {
-		final UUID userId = UUID.randomUUID();
-//		Mockito.when(userRepositoryMock.getForId(userId))
-//				.thenReturn(new User("Janos"));
-		User actualUser = userService.getUser(userId);
-//		Assertions.assertEquals("Janos", actualUser.getNickname());
-		
-		userService.addUser(actualUser);
-		Mockito.verify(userRepositoryMock, times(1)).add(actualUser);
+	void getUser_userPresent_returnsUser() {
+		when(userRepository.getForId(USER_A.getId())).thenReturn(USER_A);
 
+		User actual = userService.getUser(USER_A.getId());
+
+		Assertions.assertThat(actual).isEqualTo(USER_A);
 	}
 
 	@Test
-	void addUser_givenUser_thenAddToDb() {
-		final User user = new User("Janos");
-		final UUID userId = UUID.randomUUID();
-		Mockito.when(userRepositoryMock.getForId(userId))
-				.thenReturn(user);
-		userService.addUser(user);
-		Assertions.assertEquals(user, userService.getUser(userId));
+	void getUser_userAbsent_returnsNull() {
+		User actual = userService.getUser(USER_A.getId());
+
+		Assertions.assertThat(actual).isNull();
 	}
 
 	@Test
 	void getUsersSortedOnNicknameAsc() {
-		final List<User> userList = new ArrayList<>() {{
-			add(new User("Janos"));
-			add(new User("Adam"));
-			add(new User("Burt"));
-			add(new User("Zorro"));
-		}};
-		List<User> userListSorted = userList.stream()
-				.sorted(Comparator.comparing(User::getNickname))
-				.toList();
+		when(userRepository.getAll()).thenReturn(List.of(USER_B, USER_A));
 
-		Mockito.when(userRepositoryMock.getAll())
-				.thenReturn(userList);
-		Assertions.assertEquals(userListSorted, userService.getUsersSortedOnNicknameAsc());
+		List<User> actual = userService.getUsersSortedOnNicknameAsc();
+
+		Assertions.assertThat(actual).containsExactlyElementsOf(List.of(USER_A, USER_B));
 	}
 
+	@Test
+	void getUsersSortedOnNicknameAsc_noUsers_returnsEmptyList() {
+		when(userRepository.getAll()).thenReturn(emptyList());
+
+		List<User> actual = userService.getUsersSortedOnNicknameAsc();
+
+		Assertions.assertThat(actual).isEmpty();
+	}
 }
