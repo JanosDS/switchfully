@@ -28,17 +28,17 @@ public class BookService {
 		// calculate the discount price!
 		double percentage = getDiscountPercentage(bookMap.size());
 		double discountPrice = bookMap.size() * BASE_PRICE * ((100 - percentage) / 100);
-		double otherPrice = 0;
+		double totalPrice = 0;
 		// caculate the total normal price without any discounts
 		for (int amount : bookMap.values()) {
-			otherPrice += amount * BASE_PRICE;
+			totalPrice += amount * BASE_PRICE;
 		}
 		// if there is a set of books (minimum 2 books), take the discountPrice
 		// in account, ignore otherwise
 		if (bookMap.size() > 1) {
-			return otherPrice + discountPrice - (bookMap.size() * BASE_PRICE); // pretty weird calculation, but hey it works correctly...
+			return totalPrice + discountPrice - (bookMap.size() * BASE_PRICE); // pretty weird calculation, but hey it works correctly...
 		}
-		return otherPrice;
+		return totalPrice;
 	}
 
 
