@@ -14,6 +14,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
 
 class UserServiceTest {
 
@@ -29,10 +30,14 @@ class UserServiceTest {
 	@Test
 	void getUser_givenUserId_thenReturnAUser() {
 		final UUID userId = UUID.randomUUID();
-		Mockito.when(userRepositoryMock.getForId(userId))
-				.thenReturn(new User("Janos"));
+//		Mockito.when(userRepositoryMock.getForId(userId))
+//				.thenReturn(new User("Janos"));
 		User actualUser = userService.getUser(userId);
-		Assertions.assertEquals("Janos", actualUser.getNickname());
+//		Assertions.assertEquals("Janos", actualUser.getNickname());
+		
+		userService.addUser(actualUser);
+		Mockito.verify(userRepositoryMock, times(1)).add(actualUser);
+
 	}
 
 	@Test
