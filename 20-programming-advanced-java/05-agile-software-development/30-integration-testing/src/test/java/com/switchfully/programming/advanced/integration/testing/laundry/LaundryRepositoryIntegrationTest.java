@@ -3,7 +3,6 @@ package com.switchfully.programming.advanced.integration.testing.laundry;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,12 +22,9 @@ class LaundryRepositoryIntegrationTest {
 
         List<Laundry> all = laundryRepository.findAll();
 
-        assertThat(all).hasSize(2);
-        assertThat(all).contains(laundry);
+        assertThat(all).hasSize(2).contains(laundry);
     }
 
     // The @DataJpaTest slice ONLY loads the persistence layer
-//    @Autowired LaundryController laundryController;
-//    @Autowired LaundryService laundryService;
     // @DataJpaTest uses an in-memory database - unless you say otherwise
 }
