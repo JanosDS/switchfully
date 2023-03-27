@@ -1,9 +1,7 @@
 package com.org.funiversity.service;
 
-import com.org.funiversity.domain.Course;
-import com.org.funiversity.domain.Professor;
-import com.org.funiversity.dto.CourseDTO;
-import com.org.funiversity.dto.CourseMapper;
+import com.org.funiversity.dto.Course.CourseDTO;
+import com.org.funiversity.dto.Course.CourseMapper;
 import com.org.funiversity.dto.ProfessorDTO;
 import com.org.funiversity.exception.ProfessorNotFoundException;
 import com.org.funiversity.repository.CourseRepository;

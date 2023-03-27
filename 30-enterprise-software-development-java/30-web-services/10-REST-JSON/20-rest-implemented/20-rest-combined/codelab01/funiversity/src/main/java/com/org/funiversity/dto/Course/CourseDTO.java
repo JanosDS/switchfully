@@ -1,6 +1,7 @@
-package com.org.funiversity.dto;
+package com.org.funiversity.dto.Course;
 
 import com.org.funiversity.domain.Professor;
+import com.org.funiversity.dto.ProfessorDTO;
 
 
 public class CourseDTO {

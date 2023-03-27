@@ -1,6 +1,7 @@
-package com.org.funiversity.dto;
+package com.org.funiversity.dto.Course;
 
 import com.org.funiversity.domain.Course;
+import com.org.funiversity.dto.ProfessorMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

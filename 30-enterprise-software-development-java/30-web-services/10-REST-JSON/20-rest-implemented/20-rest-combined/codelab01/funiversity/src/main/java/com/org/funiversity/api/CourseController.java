@@ -1,6 +1,6 @@
 package com.org.funiversity.api;
 
-import com.org.funiversity.dto.CourseDTO;
+import com.org.funiversity.dto.Course.CourseDTO;
 import com.org.funiversity.service.CourseService;
 import org.springframework.web.bind.annotation.*;
 
