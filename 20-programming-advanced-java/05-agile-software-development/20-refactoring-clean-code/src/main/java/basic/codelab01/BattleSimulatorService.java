@@ -2,27 +2,33 @@ package basic.codelab01;
 
 /**
  * Read the README.md.
- * (the current code of this class is NOT OK)
  */
-class BattleSimulatorService {
+public class BattleSimulatorService {
 
-    boolean simBat(Army a1, Army a2) {
-        int a1Strength = 0;
-        int a2Strength = 0;
+	private final int DEFENDERS_MODIFIER_BONUS = 2;
 
-        for (Soldier s : a1.getSoldiers()) {
-            a1Strength += s.getAttackingStrength();
-        }
+	public boolean simBat(Army attackingArmy, Army defendingArmy) {
 
-        for (Soldier s : a2.getSoldiers()) {
-            a2Strength += s.getDefendingStrength();
-        }
+		if (calculateArmyAttackingStrength(attackingArmy) > (calculateArmyDefendingStrength(defendingArmy) * DEFENDERS_MODIFIER_BONUS)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-        if(a1Strength > a2Strength * 2) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+	private int calculateArmyAttackingStrength(Army army) {
+		int strength = 0;
+		for (Soldier soldier : army.getSoldiers()) {
+			strength += soldier.getAttackingStrength();
+		}
+		return strength;
+	}
 
+	private int calculateArmyDefendingStrength(Army army) {
+		int strength = 0;
+		for (Soldier soldier : army.getSoldiers()) {
+			strength += soldier.getDefendingStrength();
+		}
+		return strength;
+	}
 }
