@@ -1,6 +1,7 @@
 package switchtothesun.country;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -24,4 +25,25 @@ public class CountryRepository {
 				));
 	}
 
+	public void addCountry(Country country) {
+		try {
+			jdbcTemplate.update("INSERT INTO country (id, name, fk_continent_id) VALUES (?, ?, ?)",
+					country.getId(),
+					country.getName(),
+					country.getFk_continent_id()
+			);
+		} catch (DuplicateKeyException exception) {
+			System.err.println(exception.getMessage());
+		}
+	}
+
+	public void deleteCountry(String name) {
+		try {
+			jdbcTemplate.update("DELETE FROM country WHERE name = ?",
+					name
+			);
+		} catch (DuplicateKeyException exception) {
+			System.err.println(exception.getMessage());
+		}
+	}
 }

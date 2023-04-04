@@ -28,12 +28,12 @@ public class CountryController {
 	@PostMapping(consumes = "application/json")
 	@ResponseStatus(CREATED)
 	public void addCountry(@RequestBody Country country) {
-		throw new NotYetImplementedException("Implement me!");
+		countryService.addCountry(country);
 	}
 
 	@DeleteMapping(path = "{name}")
 	@ResponseStatus(OK)
 	public void deleteCountry(@PathVariable String name) {
-		throw new NotYetImplementedException();
+		countryService.deleteCountry(name);
 	}
 }

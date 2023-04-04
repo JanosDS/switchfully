@@ -18,4 +18,12 @@ public class CountryService {
 	public List<Country> getAllCountries() {
 		return countryRepository.getAllCountries();
 	}
+
+	public void addCountry(Country country) {
+		countryRepository.addCountry(country);
+	}
+
+	public void deleteCountry(String name) {
+		countryRepository.deleteCountry(name);
+	}
 }
