@@ -1,7 +1,7 @@
 package switchtothesun.country;
 
-import examples.jdbc.Country;
 import org.hibernate.cfg.NotYetImplementedException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,20 +13,27 @@ import static org.springframework.http.HttpStatus.OK;
 @RequestMapping("countries")
 public class CountryController {
 
-    @GetMapping(produces = "application/json")
-    public List<Country> getAllCountries() {
-        throw new NotYetImplementedException("Implement me!");
-    }
+	private final CountryService countryService;
 
-    @PostMapping(consumes = "application/json")
-    @ResponseStatus(CREATED)
-    public void addCountry(@RequestBody Country country) {
-        throw new NotYetImplementedException("Implement me!");
-    }
+	@Autowired
+	public CountryController(CountryService countryService) {
+		this.countryService = countryService;
+	}
 
-    @DeleteMapping(path = "{name}")
-    @ResponseStatus(OK)
-    public void deleteCountry(@PathVariable String name) {
-        throw new NotYetImplementedException();
-    }
+	@GetMapping(produces = "application/json")
+	public List<Country> getAllCountries() {
+		return countryService.getAllCountries();
+	}
+
+	@PostMapping(consumes = "application/json")
+	@ResponseStatus(CREATED)
+	public void addCountry(@RequestBody Country country) {
+		throw new NotYetImplementedException("Implement me!");
+	}
+
+	@DeleteMapping(path = "{name}")
+	@ResponseStatus(OK)
+	public void deleteCountry(@PathVariable String name) {
+		throw new NotYetImplementedException();
+	}
 }

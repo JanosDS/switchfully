@@ -2,39 +2,43 @@ package switchtothesun.application_info;
 
 public class ApplicationInfo {
 
-    private int id;
-    private String title;
-    private String adminEmail;
-    private int version;
+	private int id;
+	private String title;
+	private String adminEmail;
+	private int version;
 
-    public ApplicationInfo(int id, String title, String adminEmail, int version) {
-        this.id = id;
-        this.title = title;
-        this.adminEmail = adminEmail;
-        this.version = version;
-    }
+	public ApplicationInfo(int id, String title, String adminEmail, int version) {
+		this.id = id;
+		this.title = title;
+		this.adminEmail = adminEmail;
+		this.version = version;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getAdminEmail() {
-        return adminEmail;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public int getVersion() {
-        return version;
-    }
+	public String getAdminEmail() {
+		return adminEmail;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public int getVersion() {
+		return version;
+	}
 
-    public void setAdminEmail(String adminEmail) {
-        this.adminEmail = adminEmail;
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public void setVersion(int version) {
-        this.version = version;
-    }
+	public void setAdminEmail(String adminEmail) {
+		this.adminEmail = adminEmail;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 }
