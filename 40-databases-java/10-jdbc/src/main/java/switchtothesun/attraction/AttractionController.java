@@ -12,24 +12,24 @@ import java.util.List;
 @RequestMapping("attractions")
 public class AttractionController {
 
-    private final AttractionRepository attractionRepository;
+	private final AttractionRepository attractionRepository;
 
-    public AttractionController(AttractionRepository attractionRepository) {
-        this.attractionRepository = attractionRepository;
-    }
+	public AttractionController(AttractionRepository attractionRepository) {
+		this.attractionRepository = attractionRepository;
+	}
 
-    @GetMapping(produces = "application/json")
-    public List<Attraction> getAllAttractions() {
-        return attractionRepository.getAllAttractions();
-    }
+	@GetMapping(produces = "application/json")
+	public List<Attraction> getAllAttractions() {
+		return attractionRepository.getAllAttractions();
+	}
 
-    @GetMapping(params = "type", produces = "application/json")
-    public List<Attraction> getAttractionsByType(@RequestParam String type) {
-        throw new NotYetImplementedException("Implement me!");
-    }
+	@GetMapping(params = "type", produces = "application/json")
+	public List<Attraction> getAttractionsByType(@RequestParam String type) {
+		return attractionRepository.findAttractionsForType(type);
+	}
 
-    @GetMapping(params = "country", produces = "application/json")
-    public List<Attraction> getAttractionsByCountry(@RequestParam String country) {
-        throw new NotYetImplementedException("Implement me!");
-    }
+	@GetMapping(params = "country", produces = "application/json")
+	public List<Attraction> getAttractionsByCountry(@RequestParam String country) {
+		return attractionRepository.findAttractionsForCountry(country);
+	}
 }

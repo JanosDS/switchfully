@@ -46,4 +46,26 @@ public class CountryRepository {
 			System.err.println(exception.getMessage());
 		}
 	}
+
+	public Country findCountryByName(String name) {
+		return jdbcTemplate.query("SELECT * FROM country WHERE name = ?",
+						(row, rownum) -> new Country(
+								row.getInt("id"),
+								row.getString("name"),
+								row.getInt("fk_continent_id")
+						),
+						name)
+				.stream().findFirst().orElse(null);
+	}
+
+	public Country findCountryById(int id) {
+		return jdbcTemplate.query("SELECT * FROM country WHERE id = ?",
+						(row, rownum) -> new Country(
+								row.getInt("id"),
+								row.getString("name"),
+								row.getInt("fk_continent_id")
+						),
+						id)
+				.stream().findFirst().orElse(null);
+	}
 }
