@@ -1,32 +1,52 @@
 package switchtothesun.attraction;
 
+import jakarta.persistence.*;
 import switchtothesun.country.Country;
 
+@Entity
+@Table(name = "attraction", schema = "switchtothesun")
 public class Attraction {
 
-    private String name;
+	@Column(name = "name", length = 255, nullable = false, unique = true)
+	private String name;
 
-    private final Country country;
+	@ManyToOne
+	@JoinColumn(name = "FK_COUNTRY_ID")
+	private Country country;
+	@Id
+	private int id;
 
-    public Attraction(String name, Country country) {
-        this.name = name;
-        this.country = country;
-    }
+	public Attraction(String name, Country country) {
+		this.name = name;
+		this.country = country;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Attraction() {
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	}
 
-    public Country getCountry() {
-        return country;
-    }
+	public String getName() {
+		return name;
+	}
 
-    @Override
-    public String toString(){
-        return name + " - " + country;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	@Override
+	public String toString() {
+		return name + " - " + country;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
 }
