@@ -1,5 +1,8 @@
 package switchtothesun.country;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -8,21 +11,19 @@ import java.util.List;
 @Repository
 public class CountryRepository {
 
-    private JdbcTemplate jdbcTemplate;
+	@PersistenceContext
+	private EntityManager entityManager;
 
-    public CountryRepository(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
+	public List<Country> getAllCountries() {
+		return entityManager.createQuery("select c from Country c", Country.class).getResultList();
+	}
 
-    public List<Country> getAllCountries(){
-        return jdbcTemplate.query("select * from country", (row, rowNum) -> new Country(row.getString("name")));
-    }
+	public void addCountry(Country country) {
+		entityManager.persist(country);
+	}
 
-    public void addCountry(Country country) {
-        jdbcTemplate.update("insert into COUNTRY (ID, NAME) values (COUNTRY_SEQ.nextval, ?)", country.getName());
-    }
-
-    public void delete(String parameter) {
-        jdbcTemplate.update("delete from COUNTRY where name = ?", parameter);
-    }
+	public void delete(int id) {
+		Country countryToDelete = entityManager.find(Country.class, id);
+		entityManager.remove(countryToDelete);
+	}
 }

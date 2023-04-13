@@ -10,19 +10,26 @@ public class Attraction {
 	@Column(name = "name", length = 255, nullable = false, unique = true)
 	private String name;
 
+	@Column(name = "type")
+	private String type;
 	@ManyToOne
 	@JoinColumn(name = "FK_COUNTRY_ID")
 	private Country country;
 	@Id
 	private int id;
 
-	public Attraction(String name, Country country) {
+	public Attraction(String name, Country country, String type) {
 		this.name = name;
 		this.country = country;
+		this.type = type;
 	}
 
 	public Attraction() {
 
+	}
+
+	public String getType() {
+		return type;
 	}
 
 	public String getName() {

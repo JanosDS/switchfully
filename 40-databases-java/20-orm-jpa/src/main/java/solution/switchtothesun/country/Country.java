@@ -7,38 +7,39 @@ import solution.switchtothesun.country.geographical_information.GeographicalInfo
 @Table(name = "COUNTRY")
 public class Country {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "country_seq")
-    @SequenceGenerator(name = "country_seq", sequenceName = "country_seq", allocationSize = 1)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "country_seq")
+	@SequenceGenerator(name = "country_seq", sequenceName = "country_seq", allocationSize = 1)
+	private Long id;
 
-    private String name;
+	@Column(name = "name", nullable = false, unique = true)
+	private String name;
 
-    @Embedded
-    private GeographicalInformation geographicalInformation;
+	@Embedded
+	private GeographicalInformation geographicalInformation;
 
-    public Country() {
+	public Country() {
 
-    }
+	}
 
-    public Country(String name) {
-        this.name = name;
-    }
+	public Country(String name) {
+		this.name = name;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public GeographicalInformation getGeographicalInformation() {
-        return geographicalInformation;
-    }
+	public GeographicalInformation getGeographicalInformation() {
+		return geographicalInformation;
+	}
 
-    @Override
-    public String toString() {
-        return name;
-    }
+	@Override
+	public String toString() {
+		return name;
+	}
 }

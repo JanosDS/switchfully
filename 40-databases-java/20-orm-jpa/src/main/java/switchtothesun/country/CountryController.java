@@ -1,5 +1,6 @@
 package switchtothesun.country;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,26 +12,29 @@ import static org.springframework.http.HttpStatus.OK;
 @RequestMapping("countries")
 public class CountryController {
 
-    private final CountryRepository countryRepository;
+	private final CountryRepository countryRepository;
+	private final CountryService countryService;
 
-    public CountryController(CountryRepository countryRepository) {
-        this.countryRepository = countryRepository;
-    }
+	@Autowired
+	public CountryController(CountryRepository countryRepository, CountryService countryService) {
+		this.countryRepository = countryRepository;
+		this.countryService = countryService;
+	}
 
-    @GetMapping(produces = "application/json")
-    public List<Country> getAllCountries() {
-        return countryRepository.getAllCountries();
-    }
+	@GetMapping(produces = "application/json")
+	public List<Country> getAllCountries() {
+		return countryService.getAllCountries();
+	}
 
-    @PostMapping(consumes = "application/json")
-    @ResponseStatus(CREATED)
-    public void addCountry(@RequestBody Country country) {
-        countryRepository.addCountry(country);
-    }
+	@PostMapping(consumes = "application/json")
+	@ResponseStatus(CREATED)
+	public void addCountry(@RequestBody Country country) {
+		countryService.addCountry(country);
+	}
 
-    @DeleteMapping(path = "{name}")
-    @ResponseStatus(OK)
-    public void deleteCountry(@PathVariable String name) {
-        countryRepository.delete(name);
-    }
+	@DeleteMapping(path = "{id}")
+	@ResponseStatus(OK)
+	public void deleteCountry(@PathVariable int id) {
+		countryService.delete(id);
+	}
 }
