@@ -37,3 +37,15 @@ remember that admin rights might spoil the fun of a local setup. AWS is your fas
 - Schemas tab: Make sure to select the Switchfully schemas
 
 You can find the setup files `40-databases-sql/20-sql/postgresql/setup-files-postgres`
+
+*Errors*
+
+> SSL error: Connection reset
+
+To fix this DB connectivity (caused by a VPN) from within IntelliJ (and JAVA in general!) , add `sslmode=disable` to your JDBC URL
+
+=> JDBC URL: `jdbc:postgresql://database-2.cuvv0osxzgmi.eu-west-3.rds.amazonaws.com:5432/postgres?sslmode=disable`
+
+⚠️ This is obviously not safe, and MUST be avoided in a PROD environment. For educational purposes only!
+
+Reference: https://jdbc.postgresql.org/documentation/ssl/
