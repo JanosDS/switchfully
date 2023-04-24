@@ -54,17 +54,17 @@
        and anybody could modify or access it. Make the counter variable private using an IIFE.
      */
 
-    let counter = 0;
 
-    function increaseCounter() {
-        return counter++;
-    }
-
-
+    let increase = (function () {
+        let counter = 0;
+        return function () {
+            return counter++;
+        }
+    })();
     //This should keep working without beeing changed
-    console.log(increaseCounter());
-    console.log(increaseCounter());
-    console.log(increaseCounter());
+    console.log(increase());
+    console.log(increase());
+    console.log(increase());
 
 
 </script>
