@@ -35,5 +35,15 @@
             .then((result) => callBack(JSON.stringify(result)));
     }
 
+    function toConsole(result) {
+        console.log(result);
+    }
+
+    function toPage(result) {
+        document.getElementById("result").innerText = result;
+    }
+
+    getPerson(toConsole(result));
+
 </script>
 </html>
