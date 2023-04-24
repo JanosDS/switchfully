@@ -34,6 +34,10 @@
         - call the functionExecutor with an inline function. That function should log "I am an inline function"
     */
 
+    declaration();
+    //functionExecutor(declaration());
+    //expression();
+
     function declaration() {
         console.log('I am a declaration');
     }
@@ -45,6 +49,15 @@
     function functionExecutor(anotherFunction) {
         anotherFunction();
     }
+
+    declaration();
+    expression();
+    // functionExecutor(declaration());
+    // functionExecutor(expression());
+    functionExecutor(function () {
+        console.log("inline function")
+    });
+
 
 </script>
 </html>
