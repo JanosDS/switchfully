@@ -33,7 +33,9 @@
                 *
             -->
             <h1>Adding an element</h1>
-            <ul id="list"><li></li></ul>
+            <ul id="list">
+                <li></li>
+            </ul>
             <button class="button" onclick="addListItem()">Add element</button>
             <button class="button" onclick="removeListItem()">Remove element</button>
         </div>
@@ -41,5 +43,19 @@
 </div>
 <script>
     //implement me
+
+
+    function addListItem() {
+        var list = document.getElementById("list");
+        var newEntry = document.createElement('li');
+        var text = "text entry";
+        newEntry.appendChild(document.createTextNode(text));
+        list.appendChild(newEntry);
+    }
+
+    function removeListItem() {
+        var list = document.getElementById("list");
+        list.firstElementChild.remove();
+    }
 </script>
 </body>
