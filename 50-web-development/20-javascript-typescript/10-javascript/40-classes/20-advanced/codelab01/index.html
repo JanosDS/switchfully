@@ -31,7 +31,8 @@
 
     //Execution 1
     let obj1 = {
-        name: 'object 1', sayName: function () {
+        name: 'object 1',
+        sayName: function () {
             console.log(this.name);
         }
     };
@@ -39,7 +40,10 @@
 
 
     //Execution 2
-    let obj2 = {name: 'object 2', sayName: obj1.sayName};
+    let obj2 = {
+        name: 'object 2',
+        sayName: obj1.sayName
+    };
     obj2.sayName();
 
 
@@ -51,7 +55,8 @@
 
     //Execution 4
     let obj3 = {
-        name: 'object 3', sayName: (function () {
+        name: 'object 3',
+        sayName: (function () {
             let _this = this;
             return function () {
                 console.log(_this.name)

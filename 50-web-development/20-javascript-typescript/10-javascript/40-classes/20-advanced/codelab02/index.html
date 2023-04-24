@@ -65,16 +65,31 @@
        Transform the following old style class to the new class syntax
      */
 
-    function Person(name) {
-        this.name = name;
+    // function Person(name) {
+    //     this.name = name;
+    // }
+    //
+    // Person.prototype.sayHello = function() {
+    //     console.log('Hello ' + this.name);
+    // };
+    //
+    // let person = new Person('Jef');
+    // person.sayHello();
+
+
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHello() {
+            console.log(`Hello, ${this.name}`);
+        }
     }
 
-    Person.prototype.sayHello = function() {
-        console.log('Hello ' + this.name);
-    };
+    let pers = new Person("Jeff");
+    pers.sayHello();
 
-    let person = new Person('Jef');
-    person.sayHello();
 
 </script>
 </html>
