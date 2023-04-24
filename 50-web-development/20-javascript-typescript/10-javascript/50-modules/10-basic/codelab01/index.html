@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../../style.css">
     <title></title>
 </head>
 <body>
@@ -37,7 +37,19 @@
      */
 
     import * as module from './aModule.js';
+    import * as personModule from './person.js';
+    import * as catModule from './cat.js';
 
     console.log(module.default);
+    console.log(module.somethingThatWillBeExposed);
+    console.log(module.somethingElseThatWillBeExposed);
+
+    let pers = new personModule.default("fred");
+    pers.sayHello();
+
+
+    let poes = new catModule.default("Whiskers");
+    poes.sayHello();
+
 </script>
 </html>
